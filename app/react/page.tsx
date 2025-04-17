@@ -6,7 +6,6 @@ import SectionTabs from "@/react/SectionTabs";
 import About from "@/react/About";
 import Fees from "@/react/Fees";
 import AcademicCredits from "@/react/AcademicCredits";
-import ApplySidebar from "@/react/ApplySidebar";
 import Footer from "@/components/landing/Footer";
 import ThemesTab from "@/react/ThemesTab"; // Make sure this exists
 import PhaseOverlay from "@/react/PhaseOverlay";
