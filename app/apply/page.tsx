@@ -22,7 +22,9 @@ export default function ApplyPage() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value, type: inputType, checked } = e.target;
+    const target = e.target as HTMLInputElement;
+    const { name, value, type: inputType, checked } = target;
+
     setForm((prev) => ({
       ...prev,
       [name]: inputType === "checkbox" ? checked : value,
