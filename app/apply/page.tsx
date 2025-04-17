@@ -1,9 +1,17 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ApplyPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ApplyForm />
+    </Suspense>
+  );
+}
+
+function ApplyForm() {
   const searchParams = useSearchParams();
   const type = searchParams.get("type");
 
@@ -24,13 +32,12 @@ export default function ApplyPage() {
   ) => {
     const target = e.target as HTMLInputElement;
     const { name, value, type: inputType, checked } = target;
-  
+
     setForm((prev) => ({
       ...prev,
       [name]: inputType === "checkbox" ? checked : value,
     }));
   };
-  
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
@@ -44,9 +51,7 @@ export default function ApplyPage() {
     e.preventDefault();
     console.log("Form submitted:", form);
     setShowConfirmation(true);
-    setTimeout(() => {
-      setShowConfirmation(false);
-    }, 5000);
+    setTimeout(() => setShowConfirmation(false), 5000);
   };
 
   return (
