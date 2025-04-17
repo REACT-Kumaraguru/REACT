@@ -1,3 +1,6 @@
+// Final fix: ensure onOpenThemes is typed and passed
+
+
 "use client";
 
 type Props = {
