@@ -24,12 +24,13 @@ export default function ApplyPage() {
   ) => {
     const target = e.target as HTMLInputElement;
     const { name, value, type: inputType, checked } = target;
-
+  
     setForm((prev) => ({
       ...prev,
       [name]: inputType === "checkbox" ? checked : value,
     }));
   };
+  
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
