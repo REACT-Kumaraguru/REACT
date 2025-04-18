@@ -5,30 +5,49 @@ import { motion } from "framer-motion";
 
 const themes = [
   {
-    title: "Live with Forest",
-    slug: "live-with-forest",
+    title: "Tech for Forest",
+    slug: "tech-for-forest",
     summary:
-      "Immerse yourself in ecosystems and work with forest officers, NGOs, and researchers.",
+      "Work alongside forest departments, NGOs, and researchers to create technologies that support conservation, biodiversity, and community-based forest governance.",
   },
   {
-    title: "Built Environments",
-    slug: "built-environments",
+    title: "Inclusive Infrastructure Lab",
+    slug: "inclusive-infrastructure-lab",
     summary:
-      "Explore sustainable urban spaces and the systems that shape how we live.",
+      "Design human-centered spaces by auditing and reimagining built environments for access, safety, and dignity across all demographics.",
   },
   {
     title: "Tech for Society",
     slug: "tech-for-society",
     summary:
-      "Use engineering and digital tools to solve local challenges at scale.",
+      "Apply digital tools, automation, and systems thinking to solve civic, social, and developmental challenges at scale.",
   },
   {
     title: "Rural Innovation",
     slug: "rural-innovation",
     summary:
-      "Work with farming communities to build real-world agri-tech and infrastructure.",
+      "Co-create grassroots solutions with rural communities, addressing agriculture, water, mobility, and decentralized infrastructure through technology.",
+  },
+  {
+    title: "Tech for Farmers",
+    slug: "tech-for-farmers",
+    summary:
+      "Develop smart tools, advisory platforms, and post-harvest innovations to empower farmers and improve food systems.",
+  },
+  {
+    title: "HealthTech for All",
+    slug: "healthtech-for-all",
+    summary:
+      "Innovate at the intersection of technology and primary healthcare to improve access, equity, and community wellness.",
+  },
+  {
+    title: "Tech for Urban Sanitation",
+    slug: "tech-for-urban-sanitation",
+    summary:
+      "Create resilient, tech-driven systems for water, waste, and sanitation to ensure clean, inclusive urban living.",
   },
 ];
+
 
 export default function ThemesPreview() {
   const [paused, setPaused] = useState(false);

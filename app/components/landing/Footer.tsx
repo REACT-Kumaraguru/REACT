@@ -15,7 +15,7 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-2">Courses</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="underline">Main Courses</a></li>
+            <li><a href="/react" className="underline">Main Courses</a></li>
             <li><a href="#" className="underline">Side Labs</a></li>
           </ul>
         </div>
@@ -30,9 +30,9 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-2">Quick Links</h3>
           <ul className="space-y-2">
-            <li><a href="/react-details" className="underline">What is REACT?</a></li>
-            <li><a href="/themes" className="underline">Themes</a></li>
-            <li><a href="/apply" className="underline">Apply Now</a></li>
+            <li><a href="/react" className="underline">What is REACT?</a></li>
+            <li><a href="/react" className="underline">Themes</a></li>
+            <li><a href="/select-user" className="underline">Apply Now</a></li>
           </ul>
         </div>
       </div>

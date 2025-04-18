@@ -33,6 +33,7 @@ export default function SelectUserPage() {
           <p className="text-gray-600 max-w-xs">If you're already working or have experience in any field.</p>
         </motion.div>
       </div>
+      
     </main>
   );
 }

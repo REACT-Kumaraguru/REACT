@@ -4,22 +4,40 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Aarthi — Student",
+    name: "Jana — Mentor (Tamil Nadu State Planning Commission)",
     quote:
-      "REACT took me beyond classrooms — I prototyped my first solution in the field!",
-    bg: "bg-green-50",
-  },
-  {
-    name: "Sathish — REACT Alumni",
-    quote:
-      "This community reshaped my career path. I got into research and real-world innovation.",
+      "I’ve worked with many youth programs, but REACT stands out. It doesn’t just talk about impact—it lives it. The students here don’t wait to be told what to do; they step into communities and start building solutions from day one.",
     bg: "bg-blue-50",
   },
   {
-    name: "Sowmya — Mentor",
+    name: "Sivakeerthana — Mentor (Zoho Corp)",
     quote:
-      "Guiding REACTers is incredibly fulfilling. They bring energy and curiosity that inspires us too.",
+      "Mentoring in REACT felt like watching sparks turn into fire. Students were not only technically sound—they were deeply empathetic. That blend is rare, and it’s what society needs more of.",
+    bg: "bg-green-50",
+  },
+  {
+    name: "Sangeetha — Professor & Mentor (Kumaraguru College of Technology)",
+    quote:
+      "REACT gave my students a lens that no classroom ever could. They returned with better questions, deeper curiosity, and stronger confidence in real-world problem-solving.",
     bg: "bg-yellow-50",
+  },
+  {
+    name: "Aparna — Student",
+    quote:
+      "I had never walked through a village and asked, 'How can I help?' REACT made me do that—and it changed how I see engineering forever.",
+    bg: "bg-pink-50",
+  },
+  {
+    name: "Nandeesh — Student",
+    quote:
+      "We built a working prototype with farmers. Not for them, but with them. That experience taught me more than any textbook ever could.",
+    bg: "bg-indigo-50",
+  },
+  {
+    name: "Rukiya Beevi — Student",
+    quote:
+      "REACT gave me a purpose. I now know that I want to use my skills to build something that matters—for real people, not just marks.",
+    bg: "bg-rose-50",
   },
 ];
 

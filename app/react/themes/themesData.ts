@@ -1,16 +1,33 @@
-"use client";
-
-
-import LiveWithForest from "./live-with-forest";
-import BuiltEnvironments from "./built-environments";
-import TechForSociety from "./tech-for-society";
-import RuralInnovation from "./rural-innovation";
-
-const themes = [
-  { slug: "live-with-forest", title: "Live with Forest", component: LiveWithForest },
-  { slug: "built-environments", title: "Built Environments", component: BuiltEnvironments },
-  { slug: "tech-for-society", title: "Tech for Society", component: TechForSociety },
-  { slug: "rural-innovation", title: "Rural Innovation", component: RuralInnovation },
+// app/react/themes/themesData.ts
+const themeList = [
+  {
+    title: "Tech for Forest",
+    slug: "live-with-forest",
+  },
+  {
+    title: "Inclusive Infrastructure Lab",
+    slug: "built-environments",
+  },
+  {
+    title: "Tech for Society",
+    slug: "tech-for-society",
+  },
+  {
+    title: "Rural Innovation",
+    slug: "rural-innovation",
+  },
+  {
+    title: "Tech for Farmers",
+    slug: "Agritechfarming",
+  },
+  {
+    title: "HealthTech for All",
+    slug: "Primary Health Innovation",
+  },
+  {
+    title: "Tech for Urban Sanitation",
+    slug: "Water & Waste (MunicipalSystems",
+  },
 ];
 
-export default themes;
+export default themeList;

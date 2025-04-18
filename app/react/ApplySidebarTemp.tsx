@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 
 type Props = {
   openPhase: (value: "explore" | "reflect" | "solve" | "apply") => void;
