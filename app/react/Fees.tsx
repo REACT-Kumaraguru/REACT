@@ -63,7 +63,6 @@ export default function Fees() {
       </p>
 
       <p className="text-base text-gray-700 italic">
-        Education here doesn’t come with a price. It comes with a possibility—and we make sure it’s within reach.
       </p>
     </div>
   );
