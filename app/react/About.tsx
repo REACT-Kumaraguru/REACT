@@ -610,110 +610,109 @@ This is where learning stops rehearsing—and begins to live.
 
   };
 
-export default function About({ openPhase }: Props) {
-  const [active, setActive] = useState<"explore" | "reflect" | "solve" | "Implement">("explore");
-
-  return (
-    <div className="relative">
-      <h2 className="text-2xl font-bold mb-4">About REACT</h2>
-
-<p className="mb-4 text-gray-700">
-  In a country as vast and diverse as India, the challenges we face—from education to sustainability—are complex, layered, and deeply human. REACT was born from a bold dream: to reimagine education not as a classroom-bound experience, but as a lived journey that builds skilled, empathetic problem solvers grounded in the realities of society.
-</p>
-
-<p className="mb-4 text-center text-lg font-semibold italic text-indigo-700">
-  “We don’t prepare studokokents for the real world. We place them right in the middle of it.”
-</p>
-
-<p className="mb-4 text-gray-700">
-  REACT stands for <strong>Real-world Experience and Application through Collaborative Transformation</strong>. It’s not just a program—it’s a new way of learning, where participants <em>live, observe, reflect, and solve</em> real-world challenges by immersing themselves in the lives of everyday changemakers. It's experiential. It's personal. And it’s deeply collaborative.
-</p>
-
-<p className="mb-4 text-center text-lg font-semibold italic text-green-700">
-  “You can’t fix a system you’ve never felt. REACT makes you feel it first.”
-</p>
-
-<p className="mb-4 text-gray-700">
-  For example, in the defense sector, engineers don’t just design in labs—they work alongside soldiers in the field to understand real needs before building practical solutions in institutions like DRDO.
-</p>
-
-<p className="mb-4 text-gray-700">
-  REACT applies that same principle to farming. Participants begin their journey by <strong>living as a farmer for 30 days</strong>. They wake up with the sun, work the fields, face the challenges, and deeply engage with the system—not as outsiders, but as part of it. This immersion brings powerful insights that no textbook can offer.
-</p>
-
-<p className="mb-4 text-center text-lg font-semibold italic text-orange-700">
-  “We don’t study problems from a distance. We live with them until they reveal their truth.”
-</p>
-
-<p className="mb-4 text-gray-700">
-  From there, they identify one problem they've lived or witnessed, break it down using systems thinking, and reframe it into a research question, innovation opportunity, or design challenge. Supported by mentors and collaborators, they build, test, and refine solutions—often right back in the same fields where the problem was born.
-</p>
-
-<p className="mb-4 text-center text-lg font-semibold italic text-rose-700">
-  “This is not internship. It’s not research. It’s transformation—of self and of system.”
-</p>
-
-<p className="mb-6 text-gray-700">
-  REACT is more than education. It’s a launchpad for changemakers. It turns learning into lived experience, problems into prototypes, and participants into purpose-driven problem solvers.
-</p>
-
-<p className="mb-6 text-gray-700">
-  The REACT journey unfolds through four powerful stages. First, you <strong>Explore</strong>—living in the field for 30 days to experience realities firsthand. Then, you <strong>Reflect</strong>—spending 1 to 4 weeks to unpack what you felt and define a meaningful problem. Once you're ready, you <strong>Solve</strong>—working over 3, 6, or even 12 months to design and build a solution with mentors and collaborators. And finally, you <strong>Implement</strong>—bringing your prototype back into the real world to test, refine, and create real impact.  
-</p>
-<p className="mb-6 text-gray-700">
-  Each of these phases forms the heart of REACT, and you’ll find more about them—step by step—throughout this website.
-</p>
-
-
-      {/* Sticky Phase Navigation */}
-      <div className="sticky top-0 bg-white py-4 z-10">
-        <div className="flex items-center justify-center gap-3">
-          {["explore", "reflect", "solve", "implement"].map((phase, idx, arr) => (
-            <div key={phase} className="flex items-center gap-3">
-              <button
-                onClick={() => setActive(phase as any)}
-                className={`px-4 py-2 rounded font-semibold ${
-                  active === phase ? "bg-black text-white" : "bg-gray-200 text-black"
-                }`}
-              >
-                {phase.charAt(0).toUpperCase() + phase.slice(1)}
-              </button>
-              {idx < arr.length - 1 && <span className="text-xl">→</span>}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Sliding Info Area */}
-      <div className="relative mt-6 mb-6 min-h-[180px]">
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ x: "100%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: "-100%", opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="bg-gray-100 rounded-xl px-6 pt-6 pb-10 shadow w-full"
-
+  export default function About({ openPhase }: Props) {
+    const [active, setActive] = useState<"explore" | "reflect" | "solve" | "Implement">("explore");
+  
+    return (
+      <div className="relative">
+        <h2 className="text-2xl font-bold mb-4">About REACT</h2>
+  
+        <p className="mb-4 text-gray-700">
+          In a country as vast and diverse as India, the challenges we face—from education to sustainability—are complex, layered, and deeply human. REACT was born from a bold dream: to reimagine education not as a classroom-bound experience, but as a lived journey that builds skilled, empathetic problem solvers grounded in the realities of society.
+        </p>
+  
+        <p className="mb-4 text-center text-lg font-semibold italic text-indigo-700">
+          “We don’t prepare students for the real world. We place them right in the middle of it.”
+        </p>
+  
+        <p className="mb-4 text-gray-700">
+          REACT stands for <strong>Real-world Experience and Application through Collaborative Transformation</strong>. It’s not just a program—it’s a new way of learning, where participants <em>live, observe, reflect, and solve</em> real-world challenges by immersing themselves in the lives of everyday changemakers. It's experiential. It's personal. And it’s deeply collaborative.
+        </p>
+  
+        <p className="mb-4 text-center text-lg font-semibold italic text-green-700">
+          “You can’t fix a system you’ve never felt. REACT makes you feel it first.”
+        </p>
+  
+        <p className="mb-4 text-gray-700">
+          For example, in the defense sector, engineers don’t just design in labs—they work alongside soldiers in the field to understand real needs before building practical solutions in institutions like DRDO.
+        </p>
+  
+        <p className="mb-4 text-gray-700">
+          REACT applies that same principle to farming. Participants begin their journey by <strong>living as a farmer for 30 days</strong>. They wake up with the sun, work the fields, face the challenges, and deeply engage with the system—not as outsiders, but as part of it. This immersion brings powerful insights that no textbook can offer.
+        </p>
+  
+        <p className="mb-4 text-center text-lg font-semibold italic text-orange-700">
+          “We don’t study problems from a distance. We live with them until they reveal their truth.”
+        </p>
+  
+        <p className="mb-4 text-gray-700">
+          From there, they identify one problem they've lived or witnessed, break it down using systems thinking, and reframe it into a research question, innovation opportunity, or design challenge. Supported by mentors and collaborators, they build, test, and refine solutions—often right back in the same fields where the problem was born.
+        </p>
+  
+        <p className="mb-4 text-center text-lg font-semibold italic text-rose-700">
+          “This is not internship. It’s not research. It’s transformation—of self and of system.”
+        </p>
+  
+        <p className="mb-6 text-gray-700">
+          REACT is more than education. It’s a launchpad for changemakers. It turns learning into lived experience, problems into prototypes, and participants into purpose-driven problem solvers.
+        </p>
+  
+        <p className="mb-6 text-gray-700">
+          The REACT journey unfolds through four powerful stages. First, you <strong>Explore</strong>—living in the field for 30 days to experience realities firsthand. Then, you <strong>Reflect</strong>—spending 1 to 4 weeks to unpack what you felt and define a meaningful problem. Once you're ready, you <strong>Solve</strong>—working over 3, 6, or even 12 months to design and build a solution with mentors and collaborators. And finally, you <strong>Implement</strong>—bringing your prototype back into the real world to test, refine, and create real impact.
+        </p>
+  
+        <p className="mb-6 text-gray-700">
+          Each of these phases forms the heart of REACT, and you’ll find more about them—step by step—throughout this website.
+        </p>
+  
+        <div className="sticky top-0 bg-white py-4 z-10 border-y border-gray-200">
+  <div className="overflow-x-auto whitespace-nowrap px-4">
+    <div className="inline-flex items-center gap-3">
+      {(["explore", "reflect", "solve", "implement"] as const).map((phase, idx, arr) => (
+        <div key={phase} className="flex items-center gap-3 shrink-0">
+          <button
+            onClick={() => setActive(phase)}
+            className={`px-4 py-2 rounded font-semibold shrink-0 ${
+              active === phase ? "bg-black text-white" : "bg-gray-200 text-black"
+            }`}
           >
-            <h3 className="text-lg font-semibold mb-2 capitalize">{active}</h3>
-            <p className="text-sm text-gray-700">{contentMap[active]}</p>
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
-      {/* Extra Content Below (Scrollable) */}
-      <div className="mt-10 space-y-4">
-  <h3 className="text-xl font-bold">REACT With Us—Live, Learn, and Lead Change.</h3>
-  <p className="text-gray-700 text-sm">
-    REACT is not just a program—it is a proposition for the future of education in India and beyond. One where students grow not just as professionals, but as people of purpose. Where communities become classrooms, and problems become possibilities.
-  </p>
-  <p className="text-gray-700 text-sm">
-    As REACT moves from pilot to platform, we invite changemakers, institutions, and global networks to walk with us—to listen, to co-create, and to build a world where learning is inseparable from living. Because the next revolution in education won’t come from better answers—it will come from deeper presence.
-  </p>
+            {phase.charAt(0).toUpperCase() + phase.slice(1)}
+          </button>
+          {idx < arr.length - 1 && <span className="text-xl text-gray-400">→</span>}
+        </div>
+      ))}
+    </div>
+  </div>
 </div>
 
-    </div>
-  );
-}
+  
+        {/* Sliding Info Area */}
+        <div className="relative mt-6 mb-6 min-h-[180px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: "-100%", opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-gray-100 rounded-xl px-6 pt-6 pb-10 shadow w-full"
+            >
+              <h3 className="text-lg font-semibold mb-2 capitalize">{active}</h3>
+              <p className="text-sm text-gray-700">{contentMap[active]}</p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+  
+        {/* Extra Content Below (Scrollable) */}
+        <div className="mt-10 space-y-4">
+          <h3 className="text-xl font-bold">REACT With Us—Live, Learn, and Lead Change.</h3>
+          <p className="text-gray-700 text-sm">
+            REACT is not just a program—it is a proposition for the future of education in India and beyond. One where students grow not just as professionals, but as people of purpose. Where communities become classrooms, and problems become possibilities.
+          </p>
+          <p className="text-gray-700 text-sm">
+            As REACT moves from pilot to platform, we invite changemakers, institutions, and global networks to walk with us—to listen, to co-create, and to build a world where learning is inseparable from living. Because the next revolution in education won’t come from better answers—it will come from deeper presence.
+          </p>
+        </div>
+      </div>
+    );
+  }

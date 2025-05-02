@@ -9,9 +9,22 @@ export default function Hero() {
   const [showReact, setShowReact] = useState(false);
   const [showApply, setShowApply] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Alternate between black and white on every visit
   const [bgColor, setBgColor] = useState("#111");
+
+  useEffect(() => {
+    // Check if device is mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const last = localStorage.getItem("last-bg");
@@ -22,35 +35,78 @@ export default function Hero() {
 
   const isDark = bgColor === "#111";
 
-  // Drawing logic
+  // Drawing logic - optimize for mobile
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // Update canvas dimensions on resize
+    const updateDimensions = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
 
     let drawing = false;
+    let lastX = 0;
+    let lastY = 0;
 
     const setStrokeColor = () => {
       ctx.strokeStyle = isDark ? "#ffffff" : "#000000";
-      ctx.lineWidth = 2;
+      ctx.lineWidth = isMobile ? 3 : 2; // Thicker line on mobile
       ctx.lineCap = "round";
     };
 
-    const startDraw = (e: MouseEvent) => {
+    // Handle both mouse and touch events
+    const startDraw = (e: MouseEvent | TouchEvent) => {
       drawing = true;
       setStrokeColor();
+      
+      let clientX, clientY;
+      
+      if ("touches" in e) {
+        // Touch event
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+      } else {
+        // Mouse event
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
+      
+      lastX = clientX;
+      lastY = clientY;
+      
       ctx.beginPath();
-      ctx.moveTo(e.clientX, e.clientY);
+      ctx.moveTo(clientX, clientY);
     };
 
-    const draw = (e: MouseEvent) => {
+    const draw = (e: MouseEvent | TouchEvent) => {
       if (!drawing) return;
-      ctx.lineTo(e.clientX, e.clientY);
+      
+      let clientX, clientY;
+      
+      if ("touches" in e) {
+        // Touch event
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+      } else {
+        // Mouse event
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
+      
+      ctx.beginPath();
+      ctx.moveTo(lastX, lastY);
+      ctx.lineTo(clientX, clientY);
       ctx.stroke();
+      
+      lastX = clientX;
+      lastY = clientY;
     };
 
     const stopDraw = () => {
@@ -58,18 +114,31 @@ export default function Hero() {
       ctx.beginPath();
     };
 
-    window.addEventListener("mousedown", startDraw);
+    // Mouse Events
+    canvas.addEventListener("mousedown", startDraw);
     window.addEventListener("mousemove", draw);
     window.addEventListener("mouseup", stopDraw);
+    
+    // Touch Events
+    canvas.addEventListener("touchstart", startDraw);
+    canvas.addEventListener("touchmove", draw);
+    canvas.addEventListener("touchend", stopDraw);
 
     return () => {
-      window.removeEventListener("mousedown", startDraw);
+      window.removeEventListener("resize", updateDimensions);
+      // Mouse Events
+      canvas.removeEventListener("mousedown", startDraw);
       window.removeEventListener("mousemove", draw);
       window.removeEventListener("mouseup", stopDraw);
+      
+      // Touch Events
+      canvas.removeEventListener("touchstart", startDraw);
+      canvas.removeEventListener("touchmove", draw);
+      canvas.removeEventListener("touchend", stopDraw);
     };
-  }, [isDark]);
+  }, [isDark, isMobile]);
 
-  // Show REACT after 5s
+  // Show REACT after 1s
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowReact(true);
@@ -108,18 +177,20 @@ export default function Hero() {
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
             className="absolute inset-0 flex items-center justify-center z-10"
-            onMouseEnter={() => setShowApply(true)}
-            onMouseLeave={() => setShowApply(false)}
+            onMouseEnter={() => !isMobile && setShowApply(true)}
+            onMouseLeave={() => !isMobile && setShowApply(false)}
+            onTouchStart={() => isMobile && setShowApply(true)}
           >
             <h1
-              className={`text-[10vw] font-handwriting pointer-events-none select-none ${
+              className={`text-[10vw] sm:text-[8vw] font-handwriting pointer-events-none select-none ${
                 isDark ? "text-white" : "text-black"
               }`}
             >
               REACT
             </h1>
 
-            {showApply && (
+            {/* Always show apply button on mobile, conditionally on desktop */}
+            {(showApply || isMobile) && (
               <Link href="/select-user">
                 <motion.button
                   initial={{ opacity: 0 }}
