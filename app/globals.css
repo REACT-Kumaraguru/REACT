@@ -80,7 +80,6 @@ a.button {
 @media (max-width: 768px) {
   body, p, h1, h2, h3, h4, h5, h6, span, a, li, td, th {
     color: #000 !important;
-    background-color: #fff !important;
   }
 }
 
