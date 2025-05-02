@@ -614,6 +614,8 @@ This is where learning stops rehearsing—and begins to live.
     const [active, setActive] = useState<"explore" | "reflect" | "solve" | "implement">("explore");
   
     return (
+    <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+
       <div className="relative">
         <h2 className="text-2xl font-bold mb-4">About REACT</h2>
   
@@ -665,14 +667,15 @@ This is where learning stops rehearsing—and begins to live.
           Each of these phases forms the heart of REACT, and you’ll find more about them—step by step—throughout this website.
         </p>
   
+        {/* Sticky Phase Navigation */}
         <div className="sticky top-0 bg-white py-4 z-10 border-y border-gray-200">
-  <div className="overflow-x-auto whitespace-nowrap px-4">
-    <div className="inline-flex items-center gap-3">
+  <div className="overflow-x-auto px-4 snap-x snap-mandatory">
+    <div className="inline-flex items-center gap-3 whitespace-nowrap min-w-max">
       {(["explore", "reflect", "solve", "implement"] as const).map((phase, idx, arr) => (
-        <div key={phase} className="flex items-center gap-3 shrink-0">
+        <div key={phase} className="flex items-center gap-3 shrink-0 snap-start">
           <button
             onClick={() => setActive(phase)}
-            className={`px-4 py-2 rounded font-semibold shrink-0 ${
+            className={`px-4 py-2 rounded font-semibold ${
               active === phase ? "bg-black text-white" : "bg-gray-200 text-black"
             }`}
           >
@@ -685,7 +688,6 @@ This is where learning stops rehearsing—and begins to live.
   </div>
 </div>
 
-  
         {/* Sliding Info Area */}
         <div className="relative mt-6 mb-6 min-h-[180px]">
           <AnimatePresence mode="wait">
@@ -714,5 +716,7 @@ This is where learning stops rehearsing—and begins to live.
           </p>
         </div>
       </div>
+      </div>
+
     );
   }

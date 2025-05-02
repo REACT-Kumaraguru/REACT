@@ -30,7 +30,9 @@ canvas {
 
 html {
   scroll-behavior: smooth;
-  font-size: 100%; /* base font scaling for rem units */
+  font-size: 100%;
+  overflow-x: hidden;
+  /* base font scaling for rem units */
 }
 
 body {
@@ -74,3 +76,11 @@ a.button {
     font-size: 1.25rem;
   }
 }
+
+@media (max-width: 768px) {
+  body, p, h1, h2, h3, h4, h5, h6, span, a, li, td, th {
+    color: #000 !important;
+    background-color: #fff !important;
+  }
+}
+
