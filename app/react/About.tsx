@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Props = {
-  openPhase: (value: "explore" | "reflect" | "solve" | "Implement") => void;
+  openPhase: (value: "explore" | "reflect" | "solve" | "implement") => void;
 };
 
 const contentMap: Record<string, React.ReactNode> = {
@@ -611,7 +611,7 @@ This is where learning stops rehearsing—and begins to live.
   };
 
   export default function About({ openPhase }: Props) {
-    const [active, setActive] = useState<"explore" | "reflect" | "solve" | "Implement">("explore");
+    const [active, setActive] = useState<"explore" | "reflect" | "solve" | "implement">("explore");
   
     return (
       <div className="relative">
