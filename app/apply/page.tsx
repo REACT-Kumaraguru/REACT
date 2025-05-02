@@ -89,6 +89,7 @@ function ApplyForm() {
             <div>
               <label className="block text-sm font-medium">Full Name</label>
               <input
+                placeholder="Enter your name"
                 type="text"
                 name="name"
                 value={form.name}
@@ -101,6 +102,7 @@ function ApplyForm() {
             <div>
               <label className="block text-sm font-medium">Email</label>
               <input
+                placeholder="Enter your email"
                 type="email"
                 name="email"
                 value={form.email}
@@ -121,6 +123,7 @@ function ApplyForm() {
                 Why do you want to join REACT?
               </label>
               <textarea
+                placeholder="Enter your reason"
                 name="reason"
                 value={form.reason}
                 onChange={handleChange}
@@ -141,6 +144,7 @@ function ApplyForm() {
                 Preferred Theme
               </label>
               <input
+                placeholder="Enter your theme"
                 type="text"
                 name="theme"
                 value={form.theme}
@@ -152,6 +156,7 @@ function ApplyForm() {
 
             <div className="flex items-center gap-2">
               <input
+                placeholder="Enter your scholarship"
                 type="checkbox"
                 name="scholarship"
                 checked={form.scholarship}
@@ -167,6 +172,7 @@ function ApplyForm() {
         <div>
           <h2 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Headshot</h2>
           <input
+            placeholder="Upload an Image"
             type="file"
             accept="image/*"
             onChange={handleImageUpload}
