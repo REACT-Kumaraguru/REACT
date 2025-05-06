@@ -1,57 +1,63 @@
-// app/react/Credits.tsx
+// app/react/AcademicCredits.tsx
 "use client";
 
-export default function Credits() {
+export default function AcademicCredits() {
   return (
-    <div className="px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4 text-indigo-700">Credits & Academic Recognition</h2>
+    <div>
+      <h2 className="text-2xl font-bold mb-4 text-rose-700">Credits & Academic Recognition</h2>
 
       <p className="mb-4 text-gray-700">
-        The REACT Fellowship is a flexible, real-world learning experience designed to offer depth, immersion, and purpose. While it does not offer a formal degree or diploma, it has been structured to align with contemporary educational frameworks and create opportunities for future academic recognition.
+        The REACT Fellowship is a deeply immersive, real-world learning program built to complement and expand traditional education. While it does not confer a formal degree or diploma, its design is aligned with national credit frameworks and global best practices in experiential learning—making it both academically meaningful and future-ready.
       </p>
 
-      <h3 className="text-xl font-semibold text-indigo-700 mt-6 mb-2">REACT Credit System</h3>
+      <h3 className="text-xl font-semibold text-rose-700 mb-2">REACT Credit Structure</h3>
       <p className="mb-4 text-gray-700">
-        For every month of immersive learning completed, participants earn <strong>1 REACT learning credit</strong>. These credits reflect the time, effort, and field-based experience gained during each phase of the program.
+        The full REACT Fellowship is equivalent to <strong>18 REACT credits</strong>, each representing <strong>45 to 60 hours</strong> of field immersion, guided learning, reflection, and solution-building.
       </p>
 
       <ul className="list-disc list-inside text-gray-700 mb-4">
-        <li>6-month program = 6 REACT credits</li>
-        <li>12-month program = 12 REACT credits</li>
-        <li>18-month program = 18 REACT credits (maximum duration)</li>
+        <li><strong>3 credits</strong> – Field immersion and lived experience documentation</li>
+        <li><strong>3 credits</strong> – Problem extraction, ideathon, and validation</li>
+        <li><strong>12 credits</strong> – Project development, implementation, and evaluation</li>
       </ul>
 
       <p className="mb-4 text-gray-700">
-        Participants can complete the fellowship in a continuous span (e.g., one 18-month journey), or through modular engagements (e.g., three separate 6-month fellowships). Extensions are available in 6- or 12-month increments, up to a total of 18 credits.
+        Participants typically complete this journey in a span of 6 to 18 months. While the standard duration is 6 months, extensions of 3, 6, or 12 months are available based on project needs and performance reviews.
       </p>
 
-      <h3 className="text-xl font-semibold text-indigo-700 mb-2">Inspired by National Standards</h3>
+      <h3 className="text-xl font-semibold text-rose-700 mb-2">Inspired by National Standards</h3>
       <p className="mb-4 text-gray-700">
-        Inspired by the UGC’s Academic Bank of Credits (ABC) framework, REACT's credit structure encourages learning that is cumulative, transferable, and learner-centered. While REACT is not a degree-granting institution, we believe in creating bridges between experiential learning and formal education.
+        REACT credits draw inspiration from the <strong>UGC’s Academic Bank of Credits (ABC)</strong> framework. They are designed to be cumulative, flexible, and centered on demonstrable learning outcomes. Though REACT does not award degrees, its structure supports academic integration where permitted.
       </p>
 
-      <h3 className="text-xl font-semibold text-indigo-700 mb-2">Academic Integration & Transfer</h3>
+      <h3 className="text-xl font-semibold text-rose-700 mb-2">Academic Mapping & Portability</h3>
       <p className="mb-4 text-gray-700">
-        REACT is actively exploring partnerships with accredited universities and higher education institutions to enable the transfer or recognition of REACT learning credits. Any credit recognition will be subject to formal agreement with the partnering institution and their credit policies.
+        REACT is in active dialogue with universities and autonomous institutions to explore formal credit recognition. Where agreements are in place, REACT credits may be used for:
       </p>
 
-      <p className="mb-4 text-gray-700">
-        Learners may use REACT credits to supplement academic portfolios, apply toward elective coursework (where permitted), or demonstrate field-based competency in interdisciplinary programs.
-      </p>
-
-      <h3 className="text-xl font-semibold text-indigo-700 mb-2">Recognition Without Risk</h3>
-      <p className="mb-4 text-gray-700">
-        REACT credits serve as a structured record of experiential education. Though not equivalent to university-issued academic credits, they are verifiable, mentor-backed, and documented in a transcript-like format.
-      </p>
-
-      <ul className="list-disc list-inside text-gray-700 mb-6">
-        <li>Completion certificate with detailed learning credits earned</li>
-        <li>Mentor feedback and impact report</li>
-        <li>Validated portfolio of research/design/innovation work</li>
+      <ul className="list-disc list-inside text-gray-700 mb-4">
+        <li>Contributing to elective or interdisciplinary credits</li>
+        <li>Supplementing portfolios for capstone or minor projects</li>
+        <li>Fulfilling institutional criteria for applied learning experiences</li>
       </ul>
 
-      <p className="text-base text-gray-700 italic">
-        In a world that increasingly values what you can do over what you memorize, REACT provides not just recognition—but readiness.
+      <p className="mb-4 text-gray-700">
+        Even where formal transfer is not applicable, REACT credits serve as an academically structured, mentor-evaluated record of learning.
+      </p>
+
+      <h3 className="text-xl font-semibold text-rose-700 mb-2">Recognition You Can Carry Forward</h3>
+      <p className="mb-4 text-gray-700">
+        Every participant who completes the REACT Fellowship will receive:
+      </p>
+
+      <ul className="list-disc list-inside text-gray-700 mb-4">
+        <li>A detailed certificate with credits earned and performance grade</li>
+        <li>Mentor-reviewed feedback and developmental report</li>
+        <li>A validated portfolio of the problem solved and solution implemented</li>
+      </ul>
+
+      <p className="mb-6 text-gray-700">
+        In an era where proof of practical problem-solving matters more than theory alone, REACT gives you not just recognition—but a record of readiness.
       </p>
     </div>
   );

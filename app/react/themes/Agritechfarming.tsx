@@ -1,54 +1,93 @@
 "use client";
 
+import Image from "next/image";
+import farmerImage from "public/images/themes/original/1.png"
+
 export default function AgriTechFarming() {
   return (
-    <div>
-      <h2 className="text-2xl font-bold mb-4 text-green-700">Agri-Tech & Farming</h2>
+    <div className="relative flex text-gray-700">
+      {/* Right-margin image for large screens */}
+      <div className="hidden lg:block absolute top-0 right-0 h-full w-64 z-0">
+        <Image
+          src={farmerImage}
+          alt="Farmer"
+          className="object-cover h-full w-full opacity-20"
+        />
+      </div>
 
-      <p className="mb-4 text-gray-700">
-        Behind every harvest is a story of decisions, risks, routines, and resilience. India's farmers feed a nation, yet face daily uncertainties—weather, price, water, pests, market access. <strong>Agri-Tech & Farming</strong> is a chance to step into that reality—not just to study it, but to co-design meaningful, grounded solutions.
-      </p>
+      {/* Main content with padding to avoid image overlap */}
+      <div className="relative z-10 w-full lg:pr-72 p-6">
+        <h2 className="text-2xl font-bold mb-4 text-green-700">Agri-Tech & Farming</h2>
 
-      <p className="mb-4 text-gray-700">
-        Rather than working in isolation from labs or startups, you'll live close to farms and farming communities, learning directly from the people who shape the soil. You’ll observe daily cycles, understand local systems, and explore how technology can simplify, support, and amplify what farmers already know.
-      </p>
+        <blockquote className="border-l-4 border-gray-400 pl-4 italic text-indigo-700 font-medium mb-4">
+          “Innovation in agriculture doesn’t mean replacing the farmer—it means respecting their instinct and building with it.”
+        </blockquote>
 
-      <p className="mb-4 text-gray-700 italic font-medium text-indigo-700">
-        “Innovation in agriculture doesn't mean replacing the farmer—it means respecting their instinct, and building tools that work with it.”
-      </p>
+        <p className="mb-4">
+          Behind every grain of rice or pulse is a farmer who has negotiated with nature, market volatility, limited infrastructure, and shrinking margins. Indian agriculture, which supports over <strong>58% of the population’s livelihood</strong> (World Bank, 2023), is no longer just about cultivation—it’s a delicate act of resilience, system navigation, and survival.
+        </p>
 
-      <p className="mb-4 text-gray-700">
-        The goal isn’t to push high-end solutions, but to prototype technologies that are <em>affordable, repairable, adoptable, and scalable</em>. You’ll learn to build for constraint, not abundance—and for trust, not just performance.
-      </p>
+        <p className="mb-4">
+          Yet the story of agricultural innovation is often written far from the fields. Too many solutions are built in labs, funded by venture metrics, or designed with assumptions rather than immersion.
+        </p>
 
-      <ul className="list-disc pl-5 mb-6 text-gray-700">
-        <li>Co-create low-cost agri-tools for sowing, irrigation, and post-harvest work</li>
-        <li>Work with farmer groups to identify bottlenecks in access, effort, or income</li>
-        <li>Prototype field-level solutions for water efficiency, crop management, or transport</li>
-        <li>Design tech with a clear lens: does this reduce dependency, or increase dignity?</li>
-      </ul>
+        <p className="mb-4 font-semibold text-green-700">
+          This is where REACT intervenes.
+        </p>
 
-      <p className="mb-4 text-gray-700">
-        Why this matters:
-      </p>
+        <h3 className="text-xl font-semibold mb-2">Step into the System—Don’t Just Study It</h3>
+        <p className="mb-4">
+          <strong>Agri-Tech & Farming</strong> isn’t a simulation or a case study—it’s full immersion. You live and learn alongside farmers, observing the rhythms of sowing, tending, harvesting, and selling. You witness firsthand how weather, groundwater, pests, market access, and policy impact everyday decisions.
+        </p>
 
-      <ul className="list-disc pl-5 mb-6 text-gray-700">
-        <li><strong>Economically</strong>: Tech-enabled tools can reduce cost and labour, improving net income for farmers</li>
-        <li><strong>Socially</strong>: Context-sensitive innovation increases local ownership and adoption</li>
-        <li><strong>Nationally</strong>: Strengthening agriculture boosts food security and climate resilience</li>
-      </ul>
+        <p className="mb-4">
+          This is not to romanticize struggle—but to design <em>with</em> it, not around it.
+        </p>
 
-      <p className="mb-4 text-gray-700">
-        This theme welcomes engineers, designers, data thinkers, and field enthusiasts who are ready to listen, build, test, and try again. You’ll operate where soil meets circuit—learning how to adapt design, mechanics, and computation to rough, real-world conditions.
-      </p>
+        <blockquote className="border-l-4 border-gray-400 pl-4 italic text-indigo-700 font-medium mb-4">
+          “According to FAO (2021), over 80% of agricultural technology fails to scale due to poor contextual fit. The issue isn’t innovation—it’s insulation.”
+        </blockquote>
 
-      <p className="mb-4 text-gray-700 italic font-medium text-indigo-700">
-        “If your solution can't survive the field, it's not ready. If it can't be fixed by a local, it’s not complete.”
-      </p>
+        <h3 className="text-xl font-semibold mb-2">Co-Create, Don’t Impose</h3>
+        <ul className="list-disc pl-5 mb-6">
+          <li>Design low-cost agri-tools for sowing, irrigation, and post-harvest processing</li>
+          <li>Prototype field-level solutions for water efficiency, crop health, or logistics</li>
+          <li>Partner with farmer groups to identify bottlenecks in effort, income, or access</li>
+          <li>Build tech that asks: does this reduce dependency, or increase dignity?</li>
+        </ul>
 
-      <p className="text-gray-700">
-        <strong>Agri-Tech & Farming</strong> is more than an innovation theme. It’s a hands-on invitation to grow something that works—slowly, locally, and together.
-      </p>
+        <blockquote className="border-l-4 border-gray-400 pl-4 italic text-indigo-700 font-medium mb-4">
+          “Frugal innovation in agriculture is about solving for constraints, not scaling luxury.” — Radjou & Prabhu, 2012
+        </blockquote>
+
+        <h3 className="text-xl font-semibold mb-2">Design Principles That Matter</h3>
+        <ul className="list-disc pl-5 mb-6">
+          <li><strong>Affordability</strong>: If it can’t be bought, it can’t be used.</li>
+          <li><strong>Adoptability</strong>: If it’s hard to learn, it’s easy to abandon.</li>
+          <li><strong>Repairability</strong>: If it breaks in the field, it must be fixed in the field.</li>
+          <li><strong>Dignity</strong>: If it reduces agency or increases dependency, it’s not innovation.</li>
+        </ul>
+
+        <h3 className="text-xl font-semibold mb-2">Why This Matters</h3>
+        <ul className="list-disc pl-5 mb-6">
+          <li><strong>Economic:</strong> Efficient tools can cut input costs by 20–30% and increase yields by up to 40% (ICAR, 2022)</li>
+          <li><strong>Social:</strong> Community-designed tech sees 3x higher adoption than top-down models (NABARD, 2021)</li>
+          <li><strong>National:</strong> Supporting smallholders strengthens food security and climate resilience (IPCC, 2022)</li>
+        </ul>
+
+        <h3 className="text-xl font-semibold mb-2">Who Should Join?</h3>
+        <p className="mb-4">
+          Engineers, designers, soil scientists, coders, data thinkers—anyone ready to build with mud on their boots. This is where your technical knowledge collides with field complexity and transforms into systems that serve.
+        </p>
+
+        <blockquote className="border-l-4 border-gray-400 pl-4 italic text-indigo-700 font-medium mb-4">
+          “If your solution can’t survive the monsoon, withstand rough use, or explain itself without English, it’s not ready.”
+        </blockquote>
+
+        <p>
+          <strong>Agri-Tech & Farming</strong> is not just a theme. It’s a hands-on invitation to co-build, co-learn, and grow something that works—slowly, locally, and together.
+        </p>
+      </div>
     </div>
   );
 }

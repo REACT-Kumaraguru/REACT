@@ -1,75 +1,60 @@
-// app/react/Fees.tsx
 "use client";
 
 export default function Fees() {
   return (
-    <div className="px-4 py-6 sm:px-6 lg:px-8 max-w-3xl mx-auto">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-rose-700">
-        Fees & Support
-      </h2>
+    <div>
+      <h2 className="text-2xl font-bold mb-4 text-rose-700">Fees & Support</h2>
 
-      <p className="mb-4 text-gray-700 text-base sm:text-lg">
-        REACT is a field-based learning experience unlike any conventional program. From rural immersion to solution implementation, your journey includes not just mentorship and guidance—but also safe accommodation, healthy food, and all necessary facilities to support your stay, learning, and co-creation.
+      <p className="mb-4 text-gray-700">
+        <strong>REACT</strong> is not a conventional program — it’s a transformative experience where communities become classrooms and problems become opportunities. Through immersive fieldwork, mentorship, and structured reflection, REACT empowers you to build solutions with real impact.
       </p>
 
-      <h3 className="text-xl sm:text-2xl font-semibold text-rose-700 mt-6 mb-2">
-        Fee Structure
-      </h3>
-      <p className="mb-4 text-gray-700 text-base sm:text-lg">
-        The program follows a flexible, credit-based system. One month of active field-based learning is equivalent to <strong>1 academic credit</strong>. Each credit includes:
+      <p className="mb-4 text-gray-700">
+        While logistics such as travel, food, or accommodation may vary by field location, every participant receives academic, developmental, and coordination support throughout the fellowship.
       </p>
 
-      <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-        <li>Full access to REACT learning modules and on-field mentorship</li>
-        <li>Accommodation in the host community or campus</li>
-        <li>Nutritious daily meals (breakfast, lunch, dinner)</li>
-        <li>Basic transportation and learning materials</li>
+      <h3 className="text-xl font-semibold text-rose-700 mt-6 mb-2">Fellowship Tuition</h3>
+      <p className="mb-4 text-gray-700">
+        The tuition fee for the REACT Fellowship is <strong>₹98,700</strong>. This investment enables:
+      </p>
+
+      <ul className="list-disc list-inside text-gray-700 mb-4">
+        <li>Access to all REACT learning modules, workshops, and tools</li>
+        <li>Dedicated mentorship from academic and field experts</li>
+        <li>Evaluation, project documentation, and final certification</li>
+        <li>Entry into REACT’s peer, mentor, and alumni network</li>
+        <li>Opportunities to showcase your work in public forums</li>
       </ul>
 
-      <p className="mb-4 text-gray-700 text-base sm:text-lg">
-        <strong>Each credit is priced at ₹10,000 INR.</strong> A minimum of 6 credits (6 months) is required to complete the program, equivalent to ₹60,000. Participants who wish to continue may extend:
+      <p className="mb-4 text-gray-700">
+        <strong>Note:</strong> This fee applies to the learning journey. Depending on your assigned location, you may need to arrange food, travel, or accommodation separately. REACT will support you in coordinating local logistics.
       </p>
 
-      <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-        <li>By 6 additional credits (6 more months) – twice at most</li>
-        <li>Or by 12 additional credits (12 months) – once at most</li>
+      <h3 className="text-xl font-semibold text-rose-700 mb-2">Scholarships: Opportunity for All</h3>
+      <p className="mb-4 text-gray-700">
+        We believe that potential should not be limited by affordability. Every applicant is <strong>automatically considered for scholarships</strong> — no separate application is required.
+      </p>
+
+      <p className="mb-2 text-gray-700 font-medium">Scholarship tiers include:</p>
+      <ul className="list-disc list-inside text-gray-700 mb-4">
+        <li>100% Tuition Fee Waiver</li>
+        <li>75% Tuition Fee Waiver</li>
+        <li>50% Tuition Fee Waiver</li>
+        <li>25% Tuition Fee Waiver</li>
+        <li>10% Tuition Fee Waiver</li>
       </ul>
 
-      <p className="mb-6 text-gray-700 text-base sm:text-lg">
-        The maximum duration of the program is 18 months (up to 24 credits).
+      <p className="mb-4 text-gray-700">
+        Selection is based on the strength of your application, alignment with the REACT vision, and performance in the admission tasks (Ground Zero + Ideathon).
       </p>
 
-      <h3 className="text-xl sm:text-2xl font-semibold text-rose-700 mb-2">
-        Scholarships & Support
-      </h3>
-      <p className="mb-4 text-gray-700 text-base sm:text-lg">
-        We believe finance should never be a barrier to passion or purpose. Every applicant is automatically considered for a scholarship based on the strength of their application, commitment, and alignment with the REACT vision.
+      <p className="mb-4 text-gray-700">
+        <strong>Note:</strong> Applicants funded by colleges, companies, or government agencies are generally not eligible for REACT scholarships unless explicitly approved by the REACT Committee.
       </p>
 
-      <p className="mb-2 text-gray-700 font-medium text-base sm:text-lg">
-        Scholarships are available in the following tiers:
-      </p>
-      <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-        <li>100% (Full tuition fee waiver)</li>
-        <li>75% tuition fee covered</li>
-        <li>50% tuition fee covered</li>
-        <li>25% tuition fee covered</li>
-        <li>10% tuition fee covered</li>
-      </ul>
-
-      <p className="mb-4 text-gray-700 text-base sm:text-lg">
-        Scholarship eligibility is determined through your application form and a short admission task. No separate scholarship form is required.
-      </p>
-
-      <p className="mb-4 text-gray-700 text-base sm:text-lg">
-        <strong>Note:</strong> Sponsored candidates (e.g., those funded by institutions or industry partners) are generally <strong>not eligible</strong> for scholarships, unless specifically approved by the REACT committee.
-      </p>
-
-      <h3 className="text-xl sm:text-2xl font-semibold text-rose-700 mb-2">
-        Value Beyond Cost
-      </h3>
-      <p className="mb-6 text-gray-700 text-base sm:text-lg">
-        The REACT experience includes not just education—but exposure, immersion, purpose, and possibility. It's an investment into your future—and the future you’re ready to change.
+      <h3 className="text-xl font-semibold text-rose-700 mb-2">A Meaningful Investment</h3>
+      <p className="mb-6 text-gray-700">
+        This is more than a fee — it’s an investment in your growth, impact, and future. Your contribution supports immersive learning, expert mentorship, and long-term career development. REACT equips you not just with skills, but with purpose.
       </p>
     </div>
   );

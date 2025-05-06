@@ -7,13 +7,9 @@ type Props = {
 
 export default function ApplySidebar({ openPhase }: Props) {
   return (
-    <div className="w-full lg:w-[240px] p-4">
-      <button
-        onClick={() => openPhase("apply")}
-        className="w-full bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition"
-      >
-        Open Apply Phase
-      </button>
+    <div className="w-full lg:w-[240px]">
+      <button onClick={() => openPhase("apply")}>Open Apply Phase</button>
     </div>
   );
 }
+// Force rebuild

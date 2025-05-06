@@ -1,36 +1,32 @@
+// app/react/SectionTabs.tsx
 "use client";
 
-type Props = {
+interface SectionTabsProps {
   current: string;
-  onChange: (tab: string) => void;
+  onChange: (newTab: string) => void;
   onOpenThemes: () => void;
-};
+}
 
-export default function SectionTabs({ current, onChange, onOpenThemes }: Props) {
-  const tabs = [
-    { id: "about", label: "About" },
-    { id: "fees", label: "Fees" },
-    { id: "credits", label: "Credits" },
-    { id: "themes", label: "Themes" },
-  ];
+export default function SectionTabs({ current, onChange, onOpenThemes }: SectionTabsProps) {
+  const tabClass = (tab: string) =>
+    `px-4 py-2 rounded-lg transition font-medium ${
+      current === tab ? "bg-black text-white" : "bg-gray-200 text-black"
+    } hover:bg-gray-300`;
 
   return (
-    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-6 px-4">
-      {tabs.map(({ id, label }) => (
-        <button
-          type="button"
-          key={id}
-          onClick={() => {
-            if (id === "themes") {
-              onOpenThemes(); // Handle the "themes" specific action
-            } else {
-              onChange(id); // Handle the default change action
-            }
-          }}
-          >
-          {label} {/* Displaying the label instead of 'id' */}
-        </button>
-      ))}
+    <div className="flex justify-center gap-4 mt-10">
+      <button onClick={() => onChange("about")} className={tabClass("about")}>
+        About
+      </button>
+      <button onClick={() => onChange("fees")} className={tabClass("fees")}>
+        Fees
+      </button>
+      <button onClick={() => onChange("credits")} className={tabClass("credits")}>
+        Credits
+      </button>
+      <button onClick={onOpenThemes} className={tabClass("themes")}>
+        Themes
+      </button>
     </div>
   );
 }

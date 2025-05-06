@@ -3,44 +3,37 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import themeList from "@/react/themes/themesData";
+import ThemeCard from "@/react/themes/ThemeCard";
 
 export default function ThemesTab() {
-  const [activeTheme, setActiveTheme] = useState<string | null>(themeList[0]?.slug || null);
+  const [activeTheme, setActiveTheme] = useState<string | null>(null);
 
   const ThemeComponent = activeTheme
     ? dynamic(() => import(`@/react/themes/${activeTheme}`), { ssr: false })
     : null;
 
   return (
-    <div className="flex flex-col sm:flex-row gap-6">
-      {/* Left Sidebar */}
-      <aside className="w-full sm:w-1/4 space-y-3">
-        <h2 className="text-xl font-bold mb-2">Themes</h2>
-        <div className="space-y-2">
-          {themeList.map((theme) => (
-            <div
-              key={theme.slug}
-              onClick={() => setActiveTheme(theme.slug)}
-              className={`p-3 text-sm text-center cursor-pointer border rounded shadow transition ${
-                activeTheme === theme.slug
-                  ? "bg-black text-white font-semibold"
-                  : "bg-gray-100 hover:bg-gray-200"
-              }`}
-            >
-              {theme.title}
-            </div>
-          ))}
-        </div>
-      </aside>
+    <div className="space-y-6">
+      {/* Grid of theme cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {themeList.map((theme) => (
+          <ThemeCard
+            key={theme.slug}
+            title={theme.title}
+            image1={theme.image1}
+            image2={theme.image2}
+            onClick={() => setActiveTheme(theme.slug)}
+            isActive={activeTheme === theme.slug}
+          />
+        ))}
+      </div>
 
-      {/* Right Content */}
-      <section className="w-full sm:w-3/4">
-        {ThemeComponent ? (
+      {/* Render selected theme component */}
+      {ThemeComponent && (
+        <div className="mt-8 p-6 border rounded-xl shadow-lg bg-white">
           <ThemeComponent />
-        ) : (
-          <p className="text-gray-600">Select a theme to view details.</p>
-        )}
-      </section>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,117 +1,114 @@
-"use client";
-import React,{ useState, useEffect } from "react";
+'use client';
+
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function WhoAreWe() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [index, setIndex] = useState(1); // 1 to 7
+  const [phase, setPhase] = useState<"anim" | "original">("anim");
+  const [direction, setDirection] = useState<"left" | "up">("left");
 
-  // Detect mobile device
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    // Initial check
-    checkMobile();
-    
-    // Add event listener
-    window.addEventListener('resize', checkMobile);
-    
-    // Cleanup
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+    const timer = setTimeout(() => {
+      if (phase === "anim") {
+        setPhase("original");
+        setDirection(prev => (prev === "left" ? "up" : "left")); // alternate
+      } else {
+        setPhase("anim");
+        setIndex(prev => (prev % 7) + 1); // loop 1–7
+      }
+    }, 4000); // 2s pause + 2s slide
 
-  // Animation variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    return () => clearTimeout(timer);
+  }, [phase]);
+
+  const slideVariants: Variants = {
+    enter: (dir: "left" | "up") => ({
+      x: dir === "left" ? "100%" : 0,
+      y: dir === "up" ? "100%" : 0,
+      opacity: 0,
+      position: "absolute",
+    }),
+    center: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      position: "relative",
+    },
+    exit: (dir: "left" | "up") => ({
+      x: dir === "left" ? "-100%" : 0,
+      y: dir === "up" ? "-100%" : 0,
+      opacity: 0,
+      position: "absolute",
+    }),
   };
 
-  // Process steps for the workflow
-  const steps = ["Explore", "Reflect", "Solve", "Implement"];
-
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gray-50 px-4 sm:px-6 py-12 sm:py-20">
-      <motion.div 
-        initial="hidden"
-        animate="visible"
-        transition={{ staggerChildren: 0.2 }}
-        className="max-w-4xl text-center space-y-8 sm:space-y-12"
+    <section
+      id="next-section"
+      className="min-h-screen w-full flex flex-col md:flex-row items-center justify-center bg-black text-white px-6 py-24 gap-10 overflow-hidden"
+    >
+      {/* Text Content */}
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="w-full md:w-1/2 space-y-6"
       >
-        <motion.div 
-          variants={fadeIn}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Who Are We?</h2>
-          <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-            REACT is a learning ecosystem where students, professionals, and mentors collaborate to solve real-world problems — not just pass exams. We believe in meaningful, applied learning that begins where most education ends — from the <strong>forest to the factory</strong>, and from the <strong>village to the lab</strong>.
-          </p>
-        </motion.div>
+        <h1 className="text-3xl md:text-5xl font-bold">REACT</h1>
+        <h2 className="text-lg md:text-xl font-medium text-gray-300">
+          Real-world Engineering and Application through Collaborative Transformation
+        </h2>
+        <p className="text-md md:text-lg text-gray-200">
+          REACT is a 6-month immersive fellowship that takes students beyond classrooms and into real communities—like forests, farms, courts, or disaster zones—where they live, listen, learn, and co-create solutions with local stakeholders and field experts.
+        </p>
 
-        <motion.div 
-          variants={fadeIn}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">What is REACT?</h2>
-          <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
-            REACT stands for <strong>Real-world Experience and Application through Collaborative Transformation</strong>. It's not just a course—it's a new kind of journey. A hands-on, problem-solving program where learners live, observe, reflect, and co-create solutions with the people who face those problems every day.
-          </p>
-
-          <blockquote className="italic text-indigo-700 text-base sm:text-lg mb-4 sm:mb-6 font-medium px-4 border-l-4 border-indigo-300 py-2 bg-indigo-50 rounded">
-            "We don't prepare students for the real world. We place them right in the middle of it."
-          </blockquote>
-
-          <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
-            Participants immerse themselves in real contexts—living as farmers, walking with forest guards, mapping water systems, decoding rural health, or rebuilding public services. They identify one challenge worth solving, reframe it into a research hypothesis, innovation brief, or design problem—and begin building solutions with mentorship and community support.
-          </p>
-
-          {/* Responsive workflow visualization */}
-          {isMobile ? (
-            // Mobile vertical workflow
-            <div className="flex flex-col items-center gap-2 mt-6 mb-4">
-              {steps.map((step, index) => (
-                <div key={index} className="w-full max-w-xs">
-                  <div className="px-4 py-3 bg-white border rounded-md shadow-sm font-medium text-gray-800 text-sm">
-                    {step}
-                  </div>
-                  {index < steps.length - 1 && (
-                    <div className="h-4 flex justify-center">
-                      <div className="w-0.5 h-full bg-gray-300"></div>
-                    </div>
-                  )}
-                </div>
-              ))}
+        <div className="text-base md:text-lg text-gray-200 space-y-6 max-w-xl">
+          <div>
+            <h3 className="text-2xl font-semibold text-white">A 4-Phase Journey</h3>
+            <div className="space-y-2 pl-2">
+              <p><strong>1. Explore:</strong> 30 days of immersive fieldwork to understand systemic realities firsthand.</p>
+              <p><strong>2. Reflect:</strong> Reframe lived experiences into meaningful challenges with mentor support.</p>
+              <p><strong>3. Solve:</strong> Co-design bold solutions using systems thinking and rapid prototyping.</p>
+              <p><strong>4. Implement:</strong> Deploy real-world MVPs with support from industry or institutional partners.</p>
             </div>
-          ) : (
-            // Desktop horizontal workflow
-            <div className="hidden sm:flex justify-center gap-3 text-sm font-medium text-gray-800 mt-8">
-              {steps.map((step, index) => (
-                <React.Fragment key={index}>
-                  <div className="px-4 py-2 bg-white border rounded-md shadow-sm hover:shadow transition">
-                    {step}
-                  </div>
-                  {index < steps.length - 1 && <div className="self-center">→</div>}
-                </React.Fragment>
-              ))}
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-semibold text-white pt-4">What Makes REACT Unique</h3>
+            <div className="space-y-2 pl-2">
+              <p><strong>1.</strong> Tri-party collaboration between students, field mentors, and technical mentors.</p>
+              <p><strong>2.</strong> Theme-based immersion in urgent domains like Tech for Forests, HealthTech for All, and Rural Innovation.</p>
+              <p><strong>3.</strong> Certification as a Fellow of REACT, with a pathway to becoming a Catalyst Leader.</p>
             </div>
-          )}
+          </div>
+        </div>
 
-          <p className="text-gray-700 text-base sm:text-lg leading-relaxed mt-6 sm:mt-8">
-            REACT is more than education. It's a launchpad for changemakers—where <strong>lived experience becomes learning</strong>, and <strong>problem solvers become grounded creators of change</strong>.
-          </p>
+        <Link href="/react">
+          <button className="mt-6 bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200">
+            Know More
+          </button>
+        </Link>
+      </motion.div>
 
-          <motion.div 
-            variants={fadeIn}
-            className="mt-8 sm:mt-10"
-          >
-            <Link href="/react">
-              <button className="bg-black text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-gray-800 transition-colors w-full sm:w-auto text-base">
-                Know More
-              </button>
-            </Link>
-          </motion.div>
-        </motion.div>
+      {/* Image Transition Section */}
+      <motion.div className="w-full md:w-1/2 aspect-[4/3] md:h-[500px] relative overflow-hidden rounded-lg shadow-lg bg-black">
+        <AnimatePresence custom={direction} mode="wait">
+          <motion.img
+            key={`${phase}-${index}`}
+            src={`/images/themes/${phase}/${index}.png`}
+            className="absolute w-full h-full object-cover"
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+          />
+        </AnimatePresence>
       </motion.div>
     </section>
   );
