@@ -7,7 +7,7 @@ import { ToolMode } from "./types";
 export default function DrawingCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
-  const [toolMode, setToolMode] = useState<ToolMode>(null);
+  const [toolMode, setToolMode] = useState<ToolMode | null>(null);
   const [strokeColor, setStrokeColor] = useState("#ffffff");
   const [strokeWidth, setStrokeWidth] = useState(4);
 

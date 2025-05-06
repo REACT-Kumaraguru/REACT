@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, RefObject } from "react";
 
-export type ToolMode = "pen" | "eraser";
+export type ToolMode = "pen" | "eraser"| null;
 
 export interface ToolSettings {
   toolMode: ToolMode;
