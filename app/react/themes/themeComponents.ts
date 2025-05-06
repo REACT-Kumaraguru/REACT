@@ -9,6 +9,8 @@ const themeComponentMap: Record<string, () => Promise<any>> = {
   "Primary Health Innovation": () => import("./primary-health-innovation"),
   "Water & Waste MunicipalSystems": () => import("./municipal-systems"),
   "techfordairy": () => import("./techfordairy"),
+  
 };
+
 
 export default themeComponentMap;
