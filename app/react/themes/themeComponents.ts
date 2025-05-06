@@ -5,7 +5,7 @@ const themeComponentMap: Record<string, () => Promise<any>> = {
   "built-environments": () => import("./built-environments"),
   "tech-for-society": () => import("./tech-for-society"),
   "rural-innovation": () => import("./rural-innovation"),
-  //"agritechfarming": () => import("./agritechfarming"), // ✅ Correct
+  "agritechfarming": () => import("./agritechfarming"), // ✅ Correct
   "Primary Health Innovation": () => import("./primary-health-innovation"),
   "Water & Waste MunicipalSystems": () => import("./municipal-systems"),
   "techfordairy": () => import("./techfordairy"),
