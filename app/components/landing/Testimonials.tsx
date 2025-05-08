@@ -11,7 +11,7 @@ const testimonials = [
     quote:
       "Working in policy and grassroots innovation, I’ve always believed in the power of field-based education. REACT is the first program I’ve seen that truly embodies that vision. It's long overdue—and exactly what India needs right now. I strongly recommend it to anyone who wants to build real solutions, from real experience.",
     bg: "bg-blue-50",
-    img: "jana.jpg",
+    img: "Jana.jpg",
     linkedin: "https://www.linkedin.com/in/connectwithjana/",
   },
   {
@@ -20,7 +20,7 @@ const testimonials = [
     quote:
       "As someone immersed in applied research, I’ve been waiting to see a program that connects students to the real world meaningfully. REACT does that with clarity and conviction. It’s not just another initiative—it’s a shift. We need more such frameworks if we truly care about the future of India’s innovation landscape.",
     bg: "bg-green-50",
-    img: "sivakeerthana.jpg",
+    img: "Sivakeerthana.jpg",
     linkedin: "https://www.linkedin.com/in/sivakeerthana/",
   },
   {
@@ -29,7 +29,7 @@ const testimonials = [
     quote:
       "For years, I’ve watched students struggle to connect theory with the reality outside. REACT filled that gap in the most profound way. It brings back meaning to education—by grounding it in people, systems, and challenges. For a country like ours, this kind of learning is no longer optional. It’s essential.",
     bg: "bg-yellow-50",
-    img: "sangeetha.jpg",
+    img: "Sangeetha.jpg",
     linkedin: "https://www.linkedin.com/in/dr-sangeetha-n-ab397258/",
   },
   {
@@ -38,7 +38,7 @@ const testimonials = [
     quote:
       "I had never walked through a village and asked, 'How can I help?' REACT made me do that—and it changed how I see engineering forever.",
     bg: "bg-pink-50",
-    img: "aparna.jpg",
+    img: "Aparna.jpg",
     linkedin: "https://www.linkedin.com/in/aparnarm2904/",
   },
   {
@@ -47,7 +47,7 @@ const testimonials = [
     quote:
       "We built a working prototype with farmers. Not for them, but with them. That experience taught me more than any textbook ever could.",
     bg: "bg-indigo-50",
-    img: "nandeesh.jpg",
+    img: "Nandeesh.jpg",
     linkedin: "https://www.linkedin.com/in/nandeeswaran-k/",
   },
   ];
@@ -90,7 +90,7 @@ export default function Testimonials() {
             style={{
               minWidth: "300px",
               maxWidth: "300px",
-              backgroundColor: "#f0f4ff", // 👈 pick a real color manually
+              backgroundColor: "#f0f4ff",
               borderRadius: "12px",
               padding: "20px",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",

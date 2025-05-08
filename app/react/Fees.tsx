@@ -40,8 +40,7 @@ export default function Fees() {
         <li>100% Tuition Fee Waiver</li>
         <li>75% Tuition Fee Waiver</li>
         <li>50% Tuition Fee Waiver</li>
-        <li>25% Tuition Fee Waiver</li>
-        <li>10% Tuition Fee Waiver</li>
+
       </ul>
 
       <p style={{ fontSize: "1 rem", color: "black", marginBottom: "1rem" }}className="mb-4 text-gray-700">

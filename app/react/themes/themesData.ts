@@ -1,8 +1,8 @@
 const themeList = [
   {
     title: "Tech for Farmers",
-    slug: "agritechfarming",
-    url: "/react/themes/agritechfarming",
+    slug: "agritechfarm",
+    url: "/react/themes/agritechfarm",
     image1: "/images/themes/original/1.png",
     image2: "/images/themes/anim/1.png",
   },
@@ -47,7 +47,16 @@ const themeList = [
     url: "/react/themes/rural-innovation",
     image1: "/images/themes/original/7.png",
     image2: "/images/themes/anim/7.png",
+  },
+  {
+    title: "Tech for Wetlands",
+    slug: "tech-for-wetlands",
+    url: "/react/themes/tech-for-wetlands",
+    image1: "/images/themes/original/wetland1.png",
+    image2: "/images/themes/anim/wetland.png",
   }
+
+
 ];
 
 export default themeList;
