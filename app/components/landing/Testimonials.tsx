@@ -50,27 +50,27 @@ const testimonials = [
     img: "Nandeesh.jpg",
     linkedin: "https://www.linkedin.com/in/nandeeswaran-k/",
   },
-  ];
+];
 
 export default function Testimonials() {
   const [paused, setPaused] = useState(false);
 
   return (
-    <section 
-    style={{
-      backgroundColor: "#ffffff", // not transparent
-      padding: "3rem 1rem",
-    }}
-    className="relative z-20 bg-white py-12 px-6">
-      <h2 style={{
+    <section
+      style={{ backgroundColor: "#ffffff", padding: "3rem 1rem" }}
+      className="relative z-20 bg-white py-12 px-6"
+    >
+      <h2
+        style={{
           fontSize: "24px",
           fontWeight: "bold",
           textAlign: "center",
           marginBottom: "32px",
-          color: "#111"
-        }}>
-          REACT Through Expert Eyes
-        </h2>
+          color: "#111",
+        }}
+      >
+        REACT Through Expert Eyes
+      </h2>
 
       <div
         className="w-full overflow-hidden"
@@ -85,50 +85,83 @@ export default function Testimonials() {
         >
           {[...testimonials, ...testimonials].map((item, index) => (
             <div
-            key={index}
-            className="testimonial-card"
-            style={{
-              minWidth: "300px",
-              maxWidth: "300px",
-              backgroundColor: "#f0f4ff",
-              borderRadius: "12px",
-              padding: "20px",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-              flexShrink: 0,
-              color: "#111", // make sure text is dark
-            }}
-          >
-          
-          <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "12px" }}>
-
-          <div style={{
-              width: "48px",
-              height: "48px",
-              position: "relative",
-              borderRadius: "50%",
-              overflow: "hidden",
-              border: "2px solid white"
-            }}>
-
+              key={index}
+              className="testimonial-card"
+              style={{
+                minWidth: "300px",
+                maxWidth: "300px",
+                backgroundColor: "#f0f4ff",
+                borderRadius: "12px",
+                padding: "20px",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                flexShrink: 0,
+                color: "#111",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "12px",
+                  marginBottom: "12px",
+                }}
+              >
+                <div
+                  style={{
+                    width: "48px",
+                    height: "48px",
+                    position: "relative",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    border: "2px solid white",
+                  }}
+                >
                   <Image
                     src={`/images/testimonials/${item.img}`}
                     alt={item.name}
                     layout="fill"
                     objectFit="cover"
+                    unoptimized // <== Prevent 400 error from image optimizer
                   />
                 </div>
                 <div className="flex-1">
-                <p style={{ fontSize: "16px", fontWeight: "bold", color: "#111", marginBottom: "4px" }}>{item.name}</p>
-                <p style={{ fontSize: "14px", color: "#333", marginBottom: "8px" }}>{item.title}</p>
-
-
+                  <p
+                    style={{
+                      fontSize: "16px",
+                      fontWeight: "bold",
+                      color: "#111",
+                      marginBottom: "4px",
+                    }}
+                  >
+                    {item.name}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      color: "#333",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    {item.title}
+                  </p>
                 </div>
-                <a href={item.linkedin} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={item.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaLinkedin className="text-blue-600 hover:text-blue-800 text-xl" />
                 </a>
               </div>
-              <p style={{ fontSize: "14px", fontStyle: "italic", color: "#111" }}>“{item.quote}”</p>
-
+              <p
+                style={{
+                  fontSize: "14px",
+                  fontStyle: "italic",
+                  color: "#111",
+                }}
+              >
+                “{item.quote}”
+              </p>
             </div>
           ))}
         </motion.div>
