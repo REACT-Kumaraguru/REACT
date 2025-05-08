@@ -1,7 +1,6 @@
 'use client';
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 
 const testimonials = [
@@ -10,7 +9,6 @@ const testimonials = [
     title: "Young Innovator (Tamil Nadu State Planning Commission)",
     quote:
       "Working in policy and grassroots innovation, I’ve always believed in the power of field-based education. REACT is the first program I’ve seen that truly embodies that vision. It's long overdue—and exactly what India needs right now. I strongly recommend it to anyone who wants to build real solutions, from real experience.",
-    bg: "bg-blue-50",
     img: "Jana.jpg",
     linkedin: "https://www.linkedin.com/in/connectwithjana/",
   },
@@ -19,7 +17,6 @@ const testimonials = [
     title: "R and D Engineer (Zoho Corp)",
     quote:
       "As someone immersed in applied research, I’ve been waiting to see a program that connects students to the real world meaningfully. REACT does that with clarity and conviction. It’s not just another initiative—it’s a shift. We need more such frameworks if we truly care about the future of India’s innovation landscape.",
-    bg: "bg-green-50",
     img: "Sivakeerthana.jpg",
     linkedin: "https://www.linkedin.com/in/sivakeerthana/",
   },
@@ -28,7 +25,6 @@ const testimonials = [
     title: "Professor",
     quote:
       "For years, I’ve watched students struggle to connect theory with the reality outside. REACT filled that gap in the most profound way. It brings back meaning to education—by grounding it in people, systems, and challenges. For a country like ours, this kind of learning is no longer optional. It’s essential.",
-    bg: "bg-yellow-50",
     img: "Sangeetha.jpg",
     linkedin: "https://www.linkedin.com/in/dr-sangeetha-n-ab397258/",
   },
@@ -37,7 +33,6 @@ const testimonials = [
     title: "Student",
     quote:
       "I had never walked through a village and asked, 'How can I help?' REACT made me do that—and it changed how I see engineering forever.",
-    bg: "bg-pink-50",
     img: "Aparna.jpg",
     linkedin: "https://www.linkedin.com/in/aparnarm2904/",
   },
@@ -46,7 +41,6 @@ const testimonials = [
     title: "Student",
     quote:
       "We built a working prototype with farmers. Not for them, but with them. That experience taught me more than any textbook ever could.",
-    bg: "bg-indigo-50",
     img: "Nandeesh.jpg",
     linkedin: "https://www.linkedin.com/in/nandeeswaran-k/",
   },
@@ -110,18 +104,20 @@ export default function Testimonials() {
                   style={{
                     width: "48px",
                     height: "48px",
-                    position: "relative",
                     borderRadius: "50%",
                     overflow: "hidden",
                     border: "2px solid white",
+                    flexShrink: 0,
                   }}
                 >
-                  <Image
+                  <img
                     src={`/images/testimonials/${item.img}`}
                     alt={item.name}
-                    layout="fill"
-                    objectFit="cover"
-                    unoptimized // <== Prevent 400 error from image optimizer
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
                   />
                 </div>
                 <div className="flex-1">
