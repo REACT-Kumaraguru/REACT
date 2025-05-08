@@ -111,7 +111,7 @@ export default function Testimonials() {
                   }}
                 >
                   <img
-                    src={`/images/testimonials/${item.img}`}
+                    src={`/images/${item.img}`}
                     alt={item.name}
                     style={{
                       width: "100%",
