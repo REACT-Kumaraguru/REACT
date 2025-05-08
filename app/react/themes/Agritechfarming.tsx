@@ -3,7 +3,7 @@
 import Image from "next/image";
 import farmerImage from "public/images/themes/original/1.png"
 
-export default function AgriTechFarming() {
+export default function agriTechFarming() {
   return (
     <div className="relative flex text-gray-700">
       {/* Right-margin image for large screens */}

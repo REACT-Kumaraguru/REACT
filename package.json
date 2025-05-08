@@ -19,6 +19,7 @@
     "react-dom": "^19.0.0",
     "react-draggable": "^4.4.6",
     "react-icons": "^5.5.0",
+    "react-medium-image-zoom": "^5.2.14",
     "sharp": "^0.34.1"
   },
   "devDependencies": {

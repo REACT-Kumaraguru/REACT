@@ -17,10 +17,20 @@ export default function Hero() {
 
   return (
     <section
-      className={`relative min-h-screen w-full transition-all duration-1000 overflow-hidden bg-black ${
-        scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
-      }`}
-    >
+  style={{
+    position: "relative",
+    minHeight: "100vh",
+    width: "100%",
+    overflow: "hidden",
+    backgroundColor: "black",
+    transition: "opacity 1s ease",
+    paddingTop: "env(safe-area-inset-top)",
+    paddingBottom: "env(safe-area-inset-bottom)",
+    opacity: scrolled ? 0 : 1,
+    pointerEvents: scrolled ? "none" : "auto",
+  }}
+>
+
       {/* Drawing logic and overlay */}
       <DrawingCanvas />
 
@@ -28,49 +38,142 @@ export default function Hero() {
 
       {/* Interaction layer, clickable only when no tool is active */}
       <div id="canvas-links" className="absolute inset-0 pointer-events-auto">
-        <Link
-          href="/select-user"
-          className="absolute w-[160px] h-[30px] left-[calc(50%-110px)] top-[calc(50%+40px)]"
-        />
-        <Link
-          href="/react"
-          className="absolute w-[160px] h-[30px] left-[calc(50%+40px)] top-[calc(50%+40px)]"
-        />
-        <div className="fixed top-5 right-5 z-20 space-y-2 text-right text-lg">
-        {[
-  { label: "Themes", href: "/react/themes" },
-  { label: "Team", href: "/react/team" },
-  { label: "Credit Structure", href: "/react/credit-structure" },
-  { label: "Contact Us", href: "/react/contact" },
-  { label: "Blogs", href: "/react/blogs" }
-].map((item, i) => (
-  <Link key={item.label} href={item.href}>
-    <div
-      className="absolute right-[40px]"
-      style={{
-        top: `${60 + (i - 1) * 40}px`, // ⬅️ precise alignment above text baseline
-        width: "180px",
-        height: "24px"
-      }}
-    />
+      <Link
+  href="/select-user"
+  style={{
+    position: "absolute",
+    top: "55vh",         // adjust based on where your text is drawn
+    left: "45%",
+    width: "140px",
+    height: "30px",
+    transform: "translateX(-50%)",
+    zIndex: 10,          // above canvas but below toolbars
+    cursor: "pointer",
+  }}
+/>
+<Link
+  href="/react"
+  style={{
+    position: "absolute",
+    top: "55vh",         // same as above if side-by-side
+    left: "58%",
+    width: "140px",
+    height: "30px",
+    transform: "translateX(-50%)",
+    zIndex: 10,
+    cursor: "pointer",
+  }}
+/>
+
+
+<>
+  <Link href="/react/themes">
+    <div style={{
+      position: "absolute",
+      top: "4vh",
+      right: "2vw",
+      width: "100px",
+      height: "28px",
+      cursor: "pointer",
+      zIndex: 10,
+    }} />
   </Link>
-))}
+
+  <a
+  href="/team.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    position: "absolute",
+    top: "10vh",
+    right: "2vw",
+    width: "100px",
+    height: "28px",
+    cursor: "pointer",
+    zIndex: 10,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "white",
+    fontWeight: "bold",
+    borderRadius: "4px",
+    textDecoration: "none",
+  }}
+>
+</a>
 
 
+  <a
+  href="/REACT Fellowship_ Credits & Academic Recognition.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    position: "absolute",
+    top: "15vh",
+    right: "2vw",
+    width: "100px",
+    height: "28px",
+    cursor: "pointer",
+    zIndex: 10,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "white",
+    fontWeight: "bold",
+    borderRadius: "4px",
+    textDecoration: "none",
+  }}
+>
+  </a>
 
 
-        </div>
+  <Link href="/react/contact">
+    <div style={{
+      position: "absolute",
+      top: "20vh",
+      right: "2vw",
+      width: "100px",
+      height: "28px",
+      cursor: "pointer",
+      zIndex: 10,
+    }} />
+  </Link>
+
+  <Link href="/react/blogs">
+    <div style={{
+      position: "absolute",
+      top: "25vh",
+      right: "2vw",
+      width: "100px",
+      height: "28px",
+      cursor: "pointer",
+      zIndex: 10,
+    }} />
+  </Link>
+</>
+
+
       </div>
 
       <div
-        className="absolute bottom-5 right-5 z-20 text-white text-3xl cursor-pointer animate-bounce"
-        onClick={() => {
-          const nextSection = document.querySelector("#next-section");
-          nextSection?.scrollIntoView({ behavior: "smooth" });
-        }}
-      >
-        ↓
-      </div>
+  onClick={() => {
+    const nextSection = document.querySelector("#next-section");
+    nextSection?.scrollIntoView({ behavior: "smooth" });
+  }}
+  style={{
+    position: "absolute",
+    bottom: "20px",
+    right: "20px",
+    zIndex: 20,
+    fontSize: "28px",
+    color: "white",
+    cursor: "pointer",
+    animation: "bounce 1.5s infinite",
+  }}
+>
+  ↓
+</div>
+
     </section>
   );
 }

@@ -36,14 +36,16 @@ export default function DrawingCanvas() {
     ctx.fillText("Know More", canvas.width / 2 + 60, canvas.height / 2 + 60);
 
     ctx.font = "20px 'Caveat', cursive";
-    ctx.fillText("You can write and erase here. Try it!", canvas.width / 2 - 140, 40);
+    const topTextOffset = canvas.width < 500 ? 180 : 140; // move more left on small screens
+    ctx.fillText("You can write and erase here. Try it!", canvas.width / 2 - topTextOffset, 40);
 
 
     
-    const menu = ["Themes", "Team", "Credit Structure", "Contact Us", "Blogs"];
+    const rightOffset = canvas.width < 500 ? 90 : 120; // shift further right on narrow screens
+    const menu = ["Themes", "Team", "Credit", "Contact Us", "Blogs"];
     ctx.font = "20px 'Caveat', cursive";
     menu.forEach((item, i) => {
-      ctx.fillText(item, canvas.width - 160, 60 + i * 40);
+      ctx.fillText(item, canvas.width - rightOffset, 60 + i * 40);
     });
   }, []);
 

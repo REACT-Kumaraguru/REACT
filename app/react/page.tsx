@@ -51,7 +51,8 @@ export default function ReactPage() {
         <div className="flex-1">{renderTabContent()}</div>
 
         {/* Apply Sidebar */}
-        <aside className="w-[240px] sticky top-20 h-fit self-start border-l pl-4">
+        <aside className="hidden lg:block w-[240px] sticky top-20 h-fit self-start border-l pl-4">
+
           <h3 className="text-xl font-semibold mb-4">Become a Part</h3>
           <a
             href="/select-user"

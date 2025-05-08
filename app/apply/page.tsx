@@ -87,7 +87,7 @@ function ApplyForm() {
     let headshotUrl = "";
   
     if (form.headshot) {
-      const fileName = `headshots/${Date.now()}_${form.headshot.name}`;
+      const fileName = `${Date.now()}_${form.headshot.name}`;
       const { data: imageData, error: imageError } = await supabase.storage
         .from("headshots")
         .upload(fileName, form.headshot);
@@ -131,11 +131,12 @@ function ApplyForm() {
         guardian_can_visit: form.guardianCanVisit,
       },
     ]);
-  
+
     if (error) {
-      alert("Submission failed. Please try again.");
-      console.error(error);
-    } else {
+      console.error("Supabase Insert Error:", error.message, error.details);
+      alert(`Submission failed: ${error.message}`);
+    }
+     else {
       setShowConfirmation(true);
       setTimeout(() => setShowConfirmation(false), 5000);
     }

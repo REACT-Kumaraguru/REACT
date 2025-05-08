@@ -6,6 +6,8 @@ import Testimonials from "./components/landing/Testimonials";
 import Motivations from "./components/landing/Motivations";
 import Footer from "./components/landing/Footer";
 import Hero from "./components/landing/Hero";
+import TimelineSection from "./components/landing/TimelineSection";
+
 
 
 export default function Home() {
@@ -13,6 +15,7 @@ export default function Home() {
     <main>
       <Hero />
       <WhoAreWe />
+      <TimelineSection />
       <WhoAreYou />
       <ThemesPreview />
       <Testimonials />
