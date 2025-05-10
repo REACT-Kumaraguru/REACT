@@ -21,17 +21,17 @@ export default function Implement() {
         Bring your solution to life.
       </p>
 
-      <p className="mb-4 text-gray-700">
+      <p style={{ color: "#000", backgroundColor: "#fff" }} className="mb-4 text-gray-700">
         Now it’s time to leave the lab, test in the real world, and make sure your solution truly works for the people it’s meant for.
       </p>
 
-      <p className="mb-4 text-gray-700">
+      <p style={{ color: "#000", backgroundColor: "#fff" }} className="mb-4 text-gray-700">
         This phase is not just about launching—it's about refining, testing, documenting, and preparing your idea for long-term impact.
       </p>
 
       <h4 className="text-lg font-semibold text-green-700 mt-6 mb-2">🛠️ Step 1: Test, Refine, Repeat</h4>
 
-      <p className="mb-4 text-gray-700">
+      <p style={{ color: "#000", backgroundColor: "#fff" }} className="mb-4 text-gray-700">
         You start small—with real people, in real places.
       </p>
 
@@ -42,13 +42,13 @@ export default function Implement() {
         <li>🔧 Refine and repeat until it’s reliable and relevant</li>
       </ul>
 
-      <p className="text-gray-700 italic mb-6">
+      <p style={{ color: "#000", backgroundColor: "#fff" }} className="text-gray-700 italic mb-6">
         Implementation is a loop—not a finish line.
       </p>
 
       <h4 className="text-lg font-semibold text-green-700 mb-2">📚 Step 2: Document Everything</h4>
 
-      <p className="mb-4 text-gray-700">
+      <p style={{ color: "#000", backgroundColor: "#fff" }} className="mb-4 text-gray-700">
         Your work needs to be understandable, replicable, and protected.
       </p>
 
@@ -58,13 +58,13 @@ export default function Implement() {
         <li>🌍 Openly share your insights so others can learn or adapt your idea</li>
       </ul>
 
-      <p className="mb-6 text-gray-700">
+      <p style={{ color: "#000", backgroundColor: "#fff" }} className="mb-6 text-gray-700">
         IP is not about locking it down—it’s about keeping it ethical and usable.
       </p>
 
       <h4 className="text-lg font-semibold text-green-700 mb-2">🤝 Step 3: Partner with the Real World</h4>
 
-      <p className="mb-4 text-gray-700">
+      <p style={{ color: "#000", backgroundColor: "#fff" }} className="mb-4 text-gray-700">
         Some projects grow bigger. If yours does, you may work with industry or government to scale it.
       </p>
 
@@ -74,7 +74,7 @@ export default function Implement() {
         <li>🚀 Develop a roadmap for scaling or commercializing your solution</li>
       </ul>
 
-      <p className="mb-6 text-gray-700">
+      <p style={{ color: "#000", backgroundColor: "#fff" }} className="mb-6 text-gray-700">
         It’s not just about growth—it’s about growing right.
       </p>
 
@@ -87,7 +87,7 @@ export default function Implement() {
         <li>A published open-access toolkit</li>
       </ul>
 
-      <p className="text-base text-gray-700 italic">
+      <p  style={{ color: "#000", backgroundColor: "#fff" }} className="text-base text-gray-700 italic">
         🌱 Implement is where impact begins. <br />
         This is where your idea becomes usable, sharable, and sustainable—something others can live with, build on, and carry forward.
       </p>

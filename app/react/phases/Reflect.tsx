@@ -99,7 +99,7 @@ export default function Reflect() {
 
       <div className="flex justify-center my-6">
         <img
-          src="/phases/vpm.png" // ✅ Replace with your actual image path
+          src="/phases/VPM.png" // ✅ Replace with your actual image path
           alt="Effort vs Impact Matrix"
           className="w-full max-w-4xl object-contain border border-gray-400 rounded-md shadow-sm"
 

@@ -41,12 +41,15 @@ export default function DrawingCanvas() {
 
 
     
-    const rightOffset = canvas.width < 500 ? 90 : 120; // shift further right on narrow screens
-    const menu = ["Themes", "Team", "Credit", "Contact Us", "Blogs"];
-    ctx.font = "20px 'Caveat', cursive";
-    menu.forEach((item, i) => {
-      ctx.fillText(item, canvas.width - rightOffset, 60 + i * 40);
-    });
+    if (window.innerWidth >= 768) {
+  const rightOffset = canvas.width < 500 ? 90 : 120;
+  const menu = ["Themes", "Team", "Credit", "Contact Us", "Blogs"];
+  ctx.font = "20px 'Caveat', cursive";
+  menu.forEach((item, i) => {
+    ctx.fillText(item, canvas.width - rightOffset, 60 + i * 40);
+  });
+}
+
   }, []);
 
   // 🔥 Toggle button interactivity based on tool
