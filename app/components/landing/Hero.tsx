@@ -11,7 +11,13 @@ export default function Hero() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [buttonPosition, setButtonPosition] = useState({ x: 50, y: 400 });
   const [isDraggingButton, setIsDraggingButton] = useState(false);
-  const [menuPosition, setMenuPosition] = useState({ x: window.innerWidth - 70, y: 20 });
+  //const [menuPosition, setMenuPosition] = useState({ x: window.innerWidth - 70, y: 20 });
+  const [menuPosition, setMenuPosition] = useState(() => {
+  if (typeof window !== "undefined") {
+    return { x: window.innerWidth - 70, y: 20 };
+  }
+  return { x: 0, y: 20 };
+});
   const [draggingMenu, setDraggingMenu] = useState(false);
 
   
