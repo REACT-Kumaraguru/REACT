@@ -144,8 +144,8 @@ function ApplyForm() {
   
 
   return (
-    <main className="min-h-screen bg-white p-8 max-w-2xl mx-auto relative">
-      <h1 className="text-3xl font-bold mb-6 text-center">
+    <main style={{color: "black", marginBottom: "1rem" }} className="min-h-screen bg-white p-8 max-w-2xl mx-auto relative">
+      <h1 style={{ fontSize: "24px", color: "black", marginBottom: "1rem" }} className="text-3xl font-bold mb-6 text-center">
         {type === "student"
           ? "Welcome, Future Student Fellow!"
           : type === "professional"
@@ -156,8 +156,8 @@ function ApplyForm() {
       <form onSubmit={handleSubmit} className="space-y-10 mt-6">
         {/* Personal Info */}
         <section>
-          <h2 className="text-xl font-semibold mb-4">Personal Information</h2>
-          <div className="space-y-4">
+          <h2 style={{ fontSize: "20px", color: "black", marginBottom: "1rem" }} className="text-xl font-semibold mb-4">Personal Information</h2>
+          <div style={{ fontSize: "16px", color: "black", marginBottom: "1rem" }} className="space-y-4">
             <Input label="Full Name" name="fullName" value={form.fullName} onChange={handleChange} required />
             <Input type="date" label="Date of Birth" name="dob" value={form.dob} onChange={handleChange} required />
             <Input label="Age" name="age" value={form.age} onChange={handleChange} required />
@@ -184,8 +184,8 @@ function ApplyForm() {
 
         {/* Parent Info (Students Only) */}
         {isStudent && (
-          <section>
-            <h2 className="text-xl font-semibold mb-4">Parent/Guardian Details</h2>
+          <section style={{ fontSize: "16px", color: "black", marginBottom: "1rem" }}>
+            <h2 style={{ fontSize: "20px", color: "black", marginBottom: "1rem" }} className="text-xl font-semibold mb-4">Parent/Guardian Details</h2>
             <Input label="Parent/Guardian Name" name="parentName" value={form.parentName} onChange={handleChange} />
             <Input label="Relation" name="parentRelation" value={form.parentRelation} onChange={handleChange} />
             <Input label="Parent Contact (with country code)" name="parentContact" value={form.parentContact} onChange={handleChange} />
@@ -193,16 +193,16 @@ function ApplyForm() {
         )}
 
         {/* Address */}
-        <section>
-          <h2 className="text-xl font-semibold mb-4">Address</h2>
+        <section style={{ fontSize: "16px", color: "black", marginBottom: "1rem" }}>
+          <h2 style={{ fontSize: "20px", color: "black", marginBottom: "1rem" }} className="text-xl font-semibold mb-4">Address</h2>
           <Input label="Permanent Address" name="permanentAddress" value={form.permanentAddress} onChange={handleChange} />
           <Input label="Communication Address" name="communicationAddress" value={form.communicationAddress} onChange={handleChange} />
         </section>
 
         {/* Program Details */}
-        <section>
-          <h2 className="text-xl font-semibold mb-4">Program Details</h2>
-          <p className="text-sm text-gray-700 mb-4">
+        <section style={{ fontSize: "16px", color: "black", marginBottom: "1rem" }}>
+          <h2 style={{ fontSize: "20px", color: "black", marginBottom: "1rem" }} className="text-xl font-semibold mb-4">Program Details</h2>
+          <p style={{ fontSize: "16px", color: "black", marginBottom: "1rem" }} className="text-sm text-gray-700 mb-4">
             This is a 6-month program with a compulsory 30-day field immersion.
             Selected participants must also attend a pre-selection immersion visit. Please confirm the following:
           </p>
@@ -212,14 +212,14 @@ function ApplyForm() {
         </section>
 
         {/* Motivation */}
-        <section>
+        <section style={{ fontSize: "24px", color: "black", marginBottom: "1rem" }}>
           <h2 className="text-xl font-semibold mb-4">Your REACT Story</h2>
           <Textarea label="Why do you want to join REACT?" name="reason" value={form.reason} onChange={handleChange} />
           <Textarea label="What do you hope to learn or contribute through REACT?" name="contribution" value={form.contribution} onChange={handleChange} />
         </section>
 
         {/* Theme & Institution */}
-        <section>
+        <section style={{ fontSize: "16px", color: "black", marginBottom: "1rem" }}>
           <Select
             label="Preferred Theme"
             name="theme"
@@ -292,7 +292,7 @@ function ApplyForm() {
 
         {/* Headshot Upload */}
         <section>
-          <h2 className="text-xl font-semibold mb-4">Upload Your Photo</h2>
+          <h2 style={{ fontSize: "20px", color: "black", marginBottom: "1rem" }} className="text-xl font-semibold mb-4">Upload Your Photo</h2>
           <input type="file" accept="image/*" onChange={handleImageUpload} className="block mb-2" />
           {preview && (
             <img src={preview} alt="Preview" className="w-32 h-32 object-cover rounded-full shadow" />
