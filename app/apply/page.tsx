@@ -153,6 +153,24 @@ function ApplyForm() {
           : "Apply to REACT"}
       </h1>
 
+      {/* Introductory Lines about REACT */}
+      <div className="mb-8 text-center text-gray-800">
+        <p className="text-lg font-medium">
+          REACT (Real-world Engineering and Application through Collaborative Transformation) is a 6-month immersive fellowship that takes you into real communities—forests, villages, cities—to co-create solutions with stakeholders and mentors.
+        </p>
+        <p className="mt-2">
+          <a
+            href="/react"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline hover:text-blue-800"
+          >
+            Know more
+          </a>
+        </p>
+      </div>
+
+
       <form onSubmit={handleSubmit} className="space-y-10 mt-6">
         {/* Personal Info */}
         <section>
