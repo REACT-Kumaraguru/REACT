@@ -155,7 +155,7 @@ function ApplyForm() {
 
       {/* Introductory Lines about REACT */}
       <div className="mb-8 text-center text-gray-800">
-        <p className="text-lg font-medium">
+        <p style={{ fontSize: "18 px", color: "black", marginBottom: "1rem" }}className="text-lg font-medium">
           REACT (Real-world Engineering and Application through Collaborative Transformation) is a 6-month immersive fellowship that takes you into real communities—forests, villages, cities—to co-create solutions with stakeholders and mentors.
         </p>
         <p className="mt-2">

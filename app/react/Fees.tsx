@@ -35,6 +35,11 @@ export default function Fees() {
         We believe that potential should not be limited by affordability. Every applicant is <strong>automatically considered for scholarships</strong> — no separate application is required.
       </p>
 
+      <p style={{ fontSize: "1rem", color: "black", marginBottom: "1rem" }} className="mb-4 text-gray-700 text-justify">
+        <strong>Encouragement:</strong> We are working to ensure that <strong>almost every selected participant receives one of the scholarship tiers</strong>. Please don’t let the fee hold you back — if you’re committed to the journey, we’re committed to supporting you.
+      </p>
+
+
       <p style={{ fontSize: "1 rem", color: "black", marginBottom: "1rem" }}className="mb-2 text-gray-700 font-medium">Scholarship tiers include:</p>
       <ul className="list-disc list-inside text-gray-700 mb-4">
         <li>100% Tuition Fee Waiver</li>
