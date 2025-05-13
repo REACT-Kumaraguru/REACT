@@ -226,8 +226,7 @@ function ApplyForm() {
           </p>
           <Checkbox label="I am okay with the 6-month commitment including field immersion." name="agreedToImmersion" checked={form.agreedToImmersion} onChange={handleChange} />
           <Checkbox label="I have discussed this with my parents/guardians." name="discussedWithGuardian" checked={form.discussedWithGuardian} onChange={handleChange} />
-          <Checkbox label="My guardian can accompany me for the pre-selection immersion if required." name="guardianCanVisit" checked={form.guardianCanVisit} onChange={handleChange} />
-        </section>
+          </section>
 
         {/* Motivation */}
         <section style={{ fontSize: "24px", color: "black", marginBottom: "1rem" }}>

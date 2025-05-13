@@ -1,16 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
 import themeList from "@/react/themes/themesData";
 import ThemeCard from "@/react/themes/ThemeCard";
 
 export default function ThemesTab() {
   const [activeTheme, setActiveTheme] = useState<string | null>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const ThemeComponent = activeTheme
     ? dynamic(() => import(`@/react/themes/${activeTheme}`), { ssr: false })
     : null;
+
+  useEffect(() => {
+    if (activeTheme && contentRef.current) {
+      contentRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [activeTheme]);
 
   return (
     <div className="space-y-6">
@@ -30,7 +37,10 @@ export default function ThemesTab() {
 
       {/* Render selected theme component */}
       {ThemeComponent && (
-        <div className="mt-8 p-6 border rounded-xl shadow-lg bg-white">
+        <div
+          ref={contentRef}
+          className="mt-8 p-6 border rounded-xl shadow-lg bg-white"
+        >
           <ThemeComponent />
         </div>
       )}
