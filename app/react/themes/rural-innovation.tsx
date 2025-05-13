@@ -5,7 +5,7 @@ import ruralImage from "public/images/themes/original/7.png"; // Update path as 
 
 export default function RuralInnovation() {
   return (
-    <div className="relative flex text-gray-700">
+    <div className="relative flex text-gray-800 dark:text-white bg-white dark:bg-gray-900">
       {/* Right-side image for large screens */}
       <div className="hidden lg:block absolute top-0 right-0 h-full w-64 z-0">
         <Image
