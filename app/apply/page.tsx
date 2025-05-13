@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { useState, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "./supabaseClient"; 
+import { useRouter } from "next/navigation";
 
 
 export default function ApplyPage() {
@@ -53,6 +54,41 @@ function ApplyForm() {
 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
+
+  const router = useRouter();
+
+const resetForm = () => {
+  setForm({
+    fullName: "",
+    dob: "",
+    age: "",
+    bloodGroup: "",
+    personalEmail: "",
+    collegeEmail: "",
+    contactNumber: "",
+    linkedIn: "",
+    parentName: "",
+    parentRelation: "",
+    parentContact: "",
+    permanentAddress: "",
+    communicationAddress: "",
+    institution: "",
+    reason: "",
+    contribution: "",
+    theme: "",
+    scholarship: "",
+    scholarshipJustification: "",
+    fallbackConsent: "",
+    fallbackPlan: "",
+    fallbackFoodStay: "",
+    headshot: null,
+    agreedToImmersion: false,
+    discussedWithGuardian: false,
+    guardianCanVisit: false,
+    gender: "",
+  });
+};
+
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -138,6 +174,7 @@ function ApplyForm() {
     }
      else {
       setShowConfirmation(true);
+      resetForm();
       setTimeout(() => setShowConfirmation(false), 5000);
     }
   };
@@ -330,13 +367,17 @@ function ApplyForm() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
-            onClick={() => setShowConfirmation(false)}
+            onClick={() => {setShowConfirmation(false);
+                router.back();
+              }}
+
           >
-            <div className="bg-white p-6 rounded-xl shadow-lg max-w-md text-center">
-              <h2 className="text-2xl font-bold mb-2 text-green-700">Application Submitted!</h2>
-              <p className="text-gray-600 text-sm">Thank you for applying. We’ll get back to you shortly.</p>
-              <p className="mt-2 text-xs text-gray-400">Click anywhere to close</p>
+            <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg max-w-md text-center text-black dark:text-white">
+              <h2 className="text-2xl font-bold mb-2 text-green-700 dark:text-green-400">Application Submitted!</h2>
+              <p className="text-sm">Thank you for applying. We’ll get back to you shortly.</p>
+              <p className="mt-2 text-xs">Click anywhere to close</p>
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>
