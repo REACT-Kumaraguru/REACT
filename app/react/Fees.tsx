@@ -52,9 +52,6 @@ export default function Fees() {
         Selection is based on the strength of your application, alignment with the REACT vision, and performance in the admission tasks (Ground Zero + Ideathon).
       </p>
 
-      <p style={{ fontSize: "1 rem", color: "black", marginBottom: "1rem" }}className="mb-4 text-gray-700">
-        <strong>Note:</strong> Applicants funded by colleges, companies, or government agencies are generally not eligible for REACT scholarships unless explicitly approved by the REACT Committee.
-      </p>
 
       <h3 style={{ fontSize: "1 rem", color: "black", marginBottom: "1rem" }}className="text-xl font-semibold text-rose-700 mb-2">A Meaningful Investment</h3>
       <p style={{ fontSize: "1 rem", color: "black", marginBottom: "1rem" }}className="mb-6 text-gray-700">
