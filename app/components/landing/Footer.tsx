@@ -34,7 +34,7 @@ export default function Footer() {
             <li><a href="/react" className="underline">What is REACT?</a></li>
             <li><a href="/react" className="underline">Themes</a></li>
             <li><a href="/select-user" className="underline">Apply Now</a></li>
-            <li><a href="/react/careers" className="underline">Career</a></li>
+            <li><a href="/react/career" className="underline">Careers</a></li>
           </ul>
         </div>
       </div>
