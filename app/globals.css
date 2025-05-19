@@ -92,7 +92,7 @@ body {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: black;
-    color: white;
+    color: back;
   }
 }
 /* Default styles (light mode) */
@@ -103,7 +103,7 @@ h2, h3, p {
 /* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   h2, h3, p {
-    color: white;
+    color: black;
   }
 
   .peel-corner {

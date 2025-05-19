@@ -7,12 +7,13 @@ import Motivations from "./components/landing/Motivations";
 import Footer from "./components/landing/Footer";
 import Hero from "./components/landing/Hero";
 import TimelineSection from "./components/landing/TimelineSection";
-
+import Navigation from "./components/landing/Navigation";
 
 
 export default function Home() {
   return (
     <main>
+      <Navigation/>
       <Hero />
       <WhoAreWe />
       <TimelineSection />

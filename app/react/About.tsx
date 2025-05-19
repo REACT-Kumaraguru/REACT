@@ -4,6 +4,9 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Explore from "./phases/Explore";
 import Reflect from "./phases/Reflect";
+import Groundzero from "./phases/Groundzero";
+import Ideathon from "./phases/Ideathon";
+import Fieldtrip from "./phases/Fieldtrip";
 import Solve from "./phases/Solve";
 import Implement from "./phases/Implement";
 import PhaseWrapper from "./phases/PhaseWrapper";
@@ -13,16 +16,19 @@ const contentMap = {
   reflect: <Reflect />,
   solve: <Solve />,
   implement: <Implement />,
+  groundzero: <Groundzero/>,
+  fieldtrip: <Fieldtrip/>,
+  ideathon: <Ideathon/>
 };
 
 export default function About() {
-  const [active, setActive] = useState("explore");
+  const [active, setActive] = useState("groundzero");
   const contentRef = useRef(null);
 
   return (
     <div className="relative max-w-7xl mx-auto">
       {/* Hero / Intro Section */}
-      <div className="min-h-screen w-full flex flex-col items-end justify-center bg-black text-white px-6 py-16">
+      {/* <div className="min-h-screen w-full flex flex-col items-end justify-center bg-black text-white px-6 py-16">
         <div className="w-full max-w-5xl px-4 text-left space-y-8">
         <h2
   className="text-2xl font-bold"
@@ -107,7 +113,7 @@ export default function About() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Phase Selector + Content */}
       <div
@@ -143,12 +149,12 @@ export default function About() {
         {/* Image & Overlay Buttons */}
         <div className="relative w-full">
           <img
-            src="/phases/fourtracks2.png"
+            src="/phases/seventrack1.png"
             alt="REACT Phases"
             className="w-full h-auto rounded-xl shadow-md"
           />
           <div className="absolute inset-0 flex pointer-events-none">
-            {["explore", "reflect", "solve", "implement"].map((phaseId) => (
+            {["groundzero","ideathon","fieldtrip","explore", "reflect", "solve", "implement"].map((phaseId) => (
               <button
                 key={phaseId}
                 onClick={() => {

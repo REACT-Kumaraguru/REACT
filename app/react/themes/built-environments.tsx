@@ -5,7 +5,7 @@ import builtEnvImage from "public/images/themes/original/6.png"; // Adjust as ne
 
 export default function BuiltEnvironments() {
   return (
-    <div className="relative flex text-gray-800 dark:text-white bg-white dark:bg-gray-900">
+    <div className="relative flex text-gray-800 !dark:text-white bg-white ">
       {/* Right margin image */}
       <div className="hidden lg:block absolute top-0 right-0 h-full w-64 z-0">
         <Image

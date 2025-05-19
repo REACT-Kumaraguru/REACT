@@ -1,44 +1,63 @@
-// app/components/Footer.tsx
-"use client";
+'use client';
+import {
+  Instagram,
+  Linkedin,
+  Twitter,
+  Youtube,
+} from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-white py-12 px-6 border-t mt-10">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm text-gray-700">
+    <footer className="bg-black text-white py-12 px-6  border-t mt-10">
+<div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 text-sm">
+        
+        {/* REACT Description */}
         <div>
-          <h3 className="font-bold mb-2">Downloads</h3>
-          <ul className="space-y-2">
-            <li><a href="/docs/react-brochure.pdf" target="_blank" className="underline">REACT Brochure</a></li>
-            <li><a href="/docs/theme-handbook.pdf" target="_blank" className="underline">Theme Handbook</a></li>
-            <li><a href="/docs/schedule.pdf" target="_blank" className="underline">Program Schedule</a></li>
+          <h3 className="text-lg font-semibold !text-white mb-3">About REACT</h3>
+          <p className="!text-white">
+            The REACT (Real-world Engineering and Application for Collaborative Transformation) Program empowers students to engineer solutions in real socio-technical environments. Through hands-on challenges, interdisciplinary projects, and field immersion, REACT bridges the gap between classroom learning and real-world impact.
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-lg !text-white font-semibold mb-3">Quick Links</h3>
+          <ul className="space-y-2 text-gray-300">
+            <li><a href="/react" className="hover:underline">What is REACT?</a></li>
+            <li><a href="/react/themes" className="hover:underline">Themes</a></li>
+            <li><a href="/select-user" className="hover:underline">Apply Now</a></li>
+            <li><a href="/react/career" className="hover:underline">Careers</a></li>
           </ul>
         </div>
+
+        {/* Downloads */}
         <div>
-          <h3 className="font-bold mb-2">Courses</h3>
-          <ul className="space-y-2">
-            <li><a href="/react" className="underline">Main Courses</a></li>
-            <li><a href="#" className="underline">Side Labs</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="font-bold mb-2">Media Presence</h3>
-          <ul className="space-y-2">
-            <li><a href="#" className="underline">Press Mentions</a></li>
-            <li><a href="#" className="underline">Social Media</a></li>
-            <li><a href="#" className="underline">Interviews</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="font-bold mb-2">Quick Links</h3>
-          <ul className="space-y-2">
-            <li><a href="/react" className="underline">What is REACT?</a></li>
-            <li><a href="/react" className="underline">Themes</a></li>
-            <li><a href="/select-user" className="underline">Apply Now</a></li>
-            <li><a href="/react/career" className="underline">Careers</a></li>
+          <h3 className="text-lg font-semibold !text-white mb-3">Downloads</h3>
+          <ul className="space-y-2 text-gray-300">
+            <li><a href="/docs/react-brochure.pdf" target="_blank" className="hover:underline">REACT Brochure</a></li>
+            <li><a href="/docs/theme-handbook.pdf" target="_blank" className="hover:underline">Theme Handbook</a></li>
+            <li><a href="/docs/schedule.pdf" target="_blank" className="hover:underline">Program Schedule</a></li>
           </ul>
         </div>
       </div>
-      <div className="text-center text-xs text-gray-400 mt-8">
+
+      <div className="mt-10 flex justify-center gap-6 text-gray-400">
+        <a rel="noopener" href="https://www.instagram.com/react.tribe/" target="_blank" aria-label="Instagram">
+          <Instagram className="w-5 h-5 hover:text-white transition-colors" />
+        </a>
+        <a rel="noopener" href="https://www.linkedin.com/company/react-ki/" target="_blank" aria-label="LinkedIn">
+          <Linkedin className="w-5 h-5 hover:text-white transition-colors" />
+        </a>
+        <a rel="noopener" href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+          <Twitter className="w-5 h-5 hover:text-white transition-colors" />
+        </a>
+        <a rel="noopener" href="https://www.youtube.com" target="_blank" aria-label="YouTube">
+          <Youtube className="w-5 h-5 hover:text-white transition-colors" />
+        </a>
+      </div>
+      
+      {/* Bottom Note */}
+      <div className="text-center text-xs text-gray-500 mt-10">
         © {new Date().getFullYear()} REACT Program. All rights reserved.
       </div>
     </footer>

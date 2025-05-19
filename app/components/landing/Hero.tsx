@@ -62,192 +62,194 @@ useEffect(() => {
 }, [draggingMenu]);
 
 
+  // Sample announcements array
+  const announcements = [
+    {
+      id: 1,
+      title: "Registration Deadline - May 30, 2025",
+      description: "Complete your application before the deadline closes."
+    },
+    {
+      id: 2,
+      title: "Results Announcement - June 1-7, 2025",
+      description: "Results will be announced in the first week of June."
+    },
+    {
+      id: 3,
+      title: "Selection Process - June 15-21, 2025",
+      description: "Selection process begins in the third week of June."
+    },
+    {
+      id: 4,
+      title: "Orientation Webinar - June 25, 2025",
+      description: "Mandatory orientation webinar for selected candidates."
+    },
+    {
+      id: 5,
+      title: "Fellowship Kickoff - July 1, 2025",
+      description: "Official kickoff of the REACT Fellowship Program."
+    }
+  ];
 
+  // Sample events array
+  const events = [
+    {
+      id: 1,
+      title: "REACT Fellowship Orientation",
+      date: "July 1, 2025",
+      description: "Official orientation for the fellowship program."
+    },
+    {
+      id: 2,
+      title: "AI Ethics in Healthcare Symposium",
+      date: "July 15, 2025",
+      description: "Exploring ethical considerations in AI healthcare applications."
+    },
+    {
+      id: 3,
+      title: "Technical Workshop",
+      date: "July 22-23, 2025",
+      description: "Building Responsible AI Systems workshop."
+    }
+  ];
   return (
-    <section
-  style={{
-    position: "relative",
-    minHeight: "100vh",
-    width: "100%",
-    overflow: "hidden",
-    backgroundColor: "black",
-    transition: "opacity 1s ease",
-    paddingTop: "env(safe-area-inset-top)",
-    paddingBottom: "env(safe-area-inset-bottom)",
-    opacity: scrolled ? 0 : 1,
-    pointerEvents: scrolled ? "none" : "auto",
-  }}
-
-  
-
-
-  
->
-
-      {/* Drawing logic and overlay */}
-      <DrawingCanvas />
-
-      {/* Original top-right buttons (shown only on desktop) */}
-<Link href="/react/themes">
-  <div className="hidden md:block" style={{
-    position: "absolute",
-    top: "4vh",
-    right: "2vw",
-    width: "100px",
-    height: "28px",
-    cursor: "pointer",
-    zIndex: 10,
-  }} />
-</Link>
-
-<a href="/team.pdf" target="_blank" rel="noopener noreferrer">
-  <div className="hidden md:block" style={{
-    position: "absolute",
-    top: "10vh",
-    right: "2vw",
-    width: "100px",
-    height: "28px",
-    cursor: "pointer",
-    zIndex: 10,
-    color: "white",
-    fontWeight: "bold",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: "4px",
-    textDecoration: "none",
-  }} />
-</a>
-
-<a href="/REACT Fellowship_ Credits & Academic Recognition.pdf" target="_blank" rel="noopener noreferrer">
-  <div className="hidden md:block" style={{
-    position: "absolute",
-    top: "15vh",
-    right: "2vw",
-    width: "100px",
-    height: "28px",
-    cursor: "pointer",
-    zIndex: 10,
-    color: "white",
-    fontWeight: "bold",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: "4px",
-    textDecoration: "none",
-  }} />
-</a>
-
-<Link href="/react/contact">
-  <div className="hidden md:block" style={{
-    position: "absolute",
-    top: "20vh",
-    right: "2vw",
-    width: "100px",
-    height: "28px",
-    cursor: "pointer",
-    zIndex: 10,
-  }} />
-</Link>
-
-<Link href="/react/blogs">
-  <div className="hidden md:block" style={{
-    position: "absolute",
-    top: "25vh",
-    right: "2vw",
-    width: "100px",
-    height: "28px",
-    cursor: "pointer",
-    zIndex: 10,
-  }} />
-</Link>
-
-
-      {/* Interaction layer, clickable only when no tool is active */}
-      <div id="canvas-links" className="absolute inset-0 pointer-events-auto">
-      <Link
-        href="/select-user"
-        style={{
-          position: "absolute",
-          top: "55vh",         // adjust based on where your text is drawn
-          left: "45%",
-          width: "140px",
-          height: "30px",
-          transform: "translateX(-50%)",
-          zIndex: 10,          // above canvas but below toolbars
-          cursor: "pointer",
-        }}
-/>
-<Link
-  href="/react"
-  style={{
-    position: "absolute",
-    top: "55vh",         // same as above if side-by-side
-    left: "58%",
-    width: "140px",
-    height: "30px",
-    transform: "translateX(-50%)",
-    zIndex: 10,
-    cursor: "pointer",
-  }}
-/>
-
-
-{/* Floating hamburger icon (only on mobile) */}
-<div
-  className="md:hidden"
-  onMouseDown={() => setDraggingMenu(true)}
-  onTouchStart={() => setDraggingMenu(true)}
-  style={{
-    position: "absolute",
-    top: menuPosition.y,
-    left: menuPosition.x,
-    zIndex: 50,
-    cursor: "grab"
-  }}
->
-  <button
-    onClick={() => setMenuOpen(!menuOpen)}
-    className="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-lg"
+    <>
+     {/* Hero Section */}
+<section className="relative min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-primary-50 to-white">
+      {/* Video Background */}
+       <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover opacity-45 hidden sm:block z-0"
   >
-    ☰
-  </button>
-</div>
+    <source src="/video-hero.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
+  {/* Mobile Video */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute inset-0 w- h-full object-cover opacity-45 block sm:hidden z-0"
+  >
+    <source src="/hero-mobile.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-{/* Dropdown menu (only shows when menuOpen is true) */}
-{menuOpen && (
-  <div className="absolute top-16 right-4 bg-white text-black rounded-lg shadow-lg z-50 p-4 space-y-3 text-sm md:hidden">
-    <Link href="/react/themes" className="block hover:underline">Themes</Link>
-    <a href="/team.pdf" target="_blank" rel="noopener noreferrer" className="block hover:underline">Team PDF</a>
-    <a href="/REACT Fellowship_ Credits & Academic Recognition.pdf" target="_blank" rel="noopener noreferrer" className="block hover:underline">Credits PDF</a>
-    <Link href="/react/contact" className="block hover:underline">Contact</Link>
-    <Link href="/react/blogs" className="block hover:underline">Blogs</Link>
-  </div>
-)}
-
-
-      </div>
-
-      <div
-  onClick={() => {
-    const nextSection = document.querySelector("#next-section");
-    nextSection?.scrollIntoView({ behavior: "smooth" });
-  }}
-  style={{
-    position: "absolute",
-    bottom: "20px",
-    right: "20px",
-    zIndex: 20,
-    fontSize: "28px",
-    color: "white",
-    cursor: "pointer",
-    animation: "bounce 1.5s infinite",
-  }}
->
-  ↓
-</div>
-
+      {/* Foreground Content */}
+      {/* <motion.div 
+        className="relative z-10 flex flex-col sm:flex-row gap-4 items-center pt-[90px]"
+        custom={2}
+      >
+        <Link 
+          href="/react/themes"
+          className="inline-block px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-600 transition-colors"
+        >
+          View Themes
+        </Link>
+        <Link 
+          href="/react/about"
+          className="inline-block px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-600 transition-colors"
+        >
+          Learn More
+        </Link>
+      </motion.div> */}
     </section>
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl font-bold text-center mb-16">Stay Connected with REACT</h1>
+        
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* Events Section */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+            }}
+            //className="bg-white p-6 rounded-lg shadow-md"
+          >
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Events</h2>
+            <p className="text-gray-700 mb-6">
+              The Buzzing Zone relaying essentials of wide range of activities organised throughout the year.
+            </p>
+            
+            {/* Preview of Events */}
+            <div className="mb-6 space-y-4">
+              {events.slice(0, 3).map((event) => (
+                <div key={event.id} className="border-l-4 border-blue-500 pl-4 py-2">
+                  <h3 className="font-semibold">{event.title}</h3>
+                  <p className="text-sm text-gray-600">{event.date}</p>
+                </div>
+              ))}
+            </div>
+            
+            <Link
+              href="/react/events"
+              className="inline-block px-6 py-3 bg-black text-white rounded-full hover:bg-gray-600 font-medium transition-colors"
+            >
+              More Events
+            </Link>
+          </motion.div>
+
+          {/* Announcements Section */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } }
+            }}
+            //className="bg-white p-6 rounded-lg shadow-md"
+          >
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Announcements</h2>
+            <p className="text-gray-700 mb-6">
+              The information hub of the upcoming events, new programmes, resources, and general notices.
+            </p>
+
+            <div className="overflow-hidden h-64 relative">
+              <motion.div
+                animate={{
+                  y: ['0%', '-50%'],
+                }}
+                transition={{
+                  duration: announcements.length * 3, // 3s per item
+                  repeat: Infinity,
+                  ease: "linear",
+                  repeatType: "loop"
+                }}
+                className="flex flex-col space-y-4"
+              >
+                {/* Doubled array for smooth infinite scroll */}
+                {[...announcements, ...announcements].map((item, index) => (
+                  <div
+                    key={index}
+                    className="border-b pb-3"
+                  >
+                    <strong className="block text-gray-800 mb-1">{item.title}</strong>
+                    <div className="text-sm text-gray-600">{item.description}</div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+            
+            <Link
+              href="/react/announcements"
+              className="inline-block mt-6 px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-600 transition-colors"
+            >
+              More Announcements
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+    </>
   );
 }

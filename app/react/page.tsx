@@ -4,6 +4,8 @@ import { useState } from "react";
 import HeroImage from "@/react/HeroImage";
 import SectionTabs from "@/react/SectionTabs";
 import About from "@/react/About";
+import Announcements from "@/react/Announcements";
+import Events from "@/react/Events";
 import Fees from "@/react/Fees";
 import AcademicCredits from "@/react/AcademicCredits";
 import Footer from "@/components/landing/Footer";
@@ -28,6 +30,10 @@ export default function ReactPage() {
         return <AcademicCredits />;
       case "themes":
         return <ThemesTab />;
+      case "announcements":
+        return <Announcements />
+      case "events":
+        return <Events/>
       default:
         return null;
     }
