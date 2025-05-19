@@ -66,7 +66,7 @@ useEffect(() => {
   const announcements = [
     {
       id: 1,
-      title: "Registration Deadline - May 30, 2025",
+      title: "Registration Deadline - May 21, 2025",
       description: "Complete your application before the deadline closes."
     },
     {
@@ -96,7 +96,7 @@ useEffect(() => {
     {
       id: 1,
       title: "REACT Fellowship Orientation",
-      date: "July 1, 2025",
+      date: "June 1, 2025",
       description: "Official orientation for the fellowship program."
     },
     {
