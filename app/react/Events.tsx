@@ -22,7 +22,7 @@ const Events = () => {
     {
       id: 1,
       title: "REACT Fellowship Orientation",
-      date: "July 1, 2025",
+      date: "June 1, 2025",
       time: "10:00 AM - 12:00 PM EST",
       location: "Virtual (Zoom)",
       description: "Join us for the official orientation of the REACT Fellowship Program. We'll cover program guidelines, expectations, and introduce the leadership team.",
@@ -61,7 +61,7 @@ const Events = () => {
     {
       id: 101,
       title: "REACT Information Session",
-      date: "April 15, 2025",
+      date: "May 15, 2025",
       time: "3:00 PM - 4:00 PM EST",
       location: "Virtual (Recorded)",
       description: "Introduction to the REACT Fellowship Program, covering eligibility criteria, application process, and fellowship benefits.",
@@ -70,7 +70,7 @@ const Events = () => {
     {
       id: 102,
       title: "Application Workshop",
-      date: "April 30, 2025",
+      date: "May 18, 2025",
       time: "11:00 AM - 12:30 PM EST",
       location: "Virtual (Recorded)",
       description: "Detailed walkthrough of the application process with tips on creating a compelling application.",

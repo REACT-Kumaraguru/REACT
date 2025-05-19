@@ -9,7 +9,7 @@ const Announcements = () => {
     {
       id: 1,
       title: "Registration Deadline",
-      date: "May 30, 2025",
+      date: "May 21, 2025",
       content: "Registration for the REACT Fellowship Program will close on May 30, 2025. Ensure you complete your application with all required documents before the deadline. Late applications will not be considered."
     },
     {
@@ -95,10 +95,9 @@ const Announcements = () => {
         <div className="mt-12 p-6 bg-blue-50 rounded-lg border border-blue-100">
           <h2 className="text-xl font-semibold text-blue-800 mb-3">Important Reminders</h2>
           <ul className="list-disc pl-5 space-y-2 text-gray-700">
-            <li>Keep your profile information up to date to receive timely notifications</li>
             <li>Follow our social media channels for real-time updates</li>
-            <li>For any queries regarding the program, contact <span className="font-medium">support@reactfellowship.org</span></li>
-            <li>All deadlines are based on Eastern Standard Time (EST)</li>
+            <li>For any queries regarding the program, contact <span className="font-medium">react@kct.ac.in</span></li>
+            <li>All deadlines are based on Indian Standard Time (IST)</li>
           </ul>
         </div>
       </div>
