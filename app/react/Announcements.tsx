@@ -20,7 +20,7 @@ const Announcements = () => {
     },
     {
       id: 3,
-      title: "Selection Process Begins",
+      title: "Selection Process Begins (tentative) ",
       date: "June 15-21, 2025",
       content: "The selection process for successful candidates will commence in the third week of June. This includes orientation sessions, document verification, and preliminary project assignments. Be prepared to engage actively during this period."
     },
