@@ -76,7 +76,7 @@ useEffect(() => {
     },
     {
       id: 3,
-      title: "Selection Process - June 15-21, 2025",
+      title: "Selection Process ( tentative )- June 15-21, 2025",
       description: "Selection process begins in the third week of June."
     },
     {
