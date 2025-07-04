@@ -77,7 +77,7 @@ const team: ProfileCardProps[] = [
     name: 'Abishake',
     role: 'Associate Intern - Event Coordinator',
     linkedin: '#',
-    photo: '/team/abishake.jpg',
+    photo: '/team/Abishake.jpg',
   },
 ];
 
@@ -85,7 +85,7 @@ const advisors: Omit<ProfileCardProps, 'linkedin'>[] = [
   { name: 'Suganthi S T', role: 'EEE - Electrical', photo: '/team/suganthi.jpg' },
   { name: 'Aswin Bharath A', role: 'Civil - Structural', photo: '/team/aswin bharath.jpg' },
   { name: 'Chitra S', role: 'Civil - Environmental', photo: '/team/chitra.jpg' },
-  { name: 'Aravind S L', role: 'Mechanical', photo: '/team/aravind.jpg' },
+  { name: 'Aravind S L', role: 'Mechanical', photo: '/team/Aravind.jpg' },
   { name: 'Kiranlal S', role: 'Startup Advisor', photo: '/team/kiranlal.jpg' },
   {
     name: 'Saravanan C',
