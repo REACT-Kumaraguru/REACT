@@ -43,7 +43,7 @@ const CareerForm = () => {
   const [currentSection, setCurrentSection] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [errors, setErrors] = useState({});
+const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>> & { submit?: string }>({});
   
   const [formData, setFormData] = useState<FormData>({
   fullName: '',
@@ -120,7 +120,11 @@ const CareerForm = () => {
 const handleInputChange = <K extends keyof FormData>(field: K, value: FormData[K]) => {
   setFormData(prev => ({ ...prev, [field]: value }));
   if (errors[field]) {
-    setErrors(prev => ({ ...prev, [field]: null }));
+    setErrors(prev => {
+      const newErrors = { ...prev };
+      delete newErrors[field];
+      return newErrors;
+    });
   }
 };
 
@@ -134,37 +138,36 @@ const handleCheckboxChange = (field: 'skillAreas' | 'hearAbout' | 'declarations'
 };
 
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      if (file.type !== 'application/pdf') {
-        setErrors(prev => ({ ...prev, cvFile: 'Only PDF files are allowed' }));
-        return;
-      }
-      if (file.size > 10 * 1024 * 1024) {
-        setErrors(prev => ({ ...prev, cvFile: 'File size must be less than 10 MB' }));
-        return;
-      }
-      setFormData(prev => ({ ...prev, cvFile: file }));
-      setCvFileName(file.name);
-      setErrors(prev => ({ ...prev, cvFile: null }));
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const file = e.target.files?.[0]; // optional chaining in case no file
+  if (file) {
+    if (file.type !== 'application/pdf') {
+      setErrors(prev => ({ ...prev, cvFile: 'Only PDF files are allowed' }));
+      return;
     }
-  };
+    if (file.size > 10 * 1024 * 1024) {
+      setErrors(prev => ({ ...prev, cvFile: 'File size must be less than 10 MB' }));
+      return;
+    }
+    setFormData(prev => ({ ...prev, cvFile: file }));
+    setCvFileName(file.name);
+  }
+};
 
-  const validateSection = (sectionId) => {
-    const newErrors = {};
-    
-    if (sectionId === 1) {
-      if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
-      if (!formData.nationality.trim()) newErrors.nationality = 'Nationality is required';
-      if (!formData.age.trim()) newErrors.age = 'Age is required';
-      if (!formData.email.trim()) newErrors.email = 'Email is required';
-      else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email format';
-      if (!formData.whatsapp.trim()) newErrors.whatsapp = 'WhatsApp number is required';
-      if (!formData.occupation.trim()) newErrors.occupation = 'Current occupation is required';
-      if (!formData.qualification.trim()) newErrors.qualification = 'Qualification is required';
-      if (!formData.emergencyContact.trim()) newErrors.emergencyContact = 'Emergency contact is required';
-    }
+const validateSection = (sectionId: number) => {
+  const newErrors: Partial<Record<keyof FormData, string>> = {};
+
+  if (sectionId === 1) {
+    if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
+    if (!formData.nationality.trim()) newErrors.nationality = 'Nationality is required';
+    if (!formData.age.trim()) newErrors.age = 'Age is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email format';
+    if (!formData.whatsapp.trim()) newErrors.whatsapp = 'WhatsApp number is required';
+    if (!formData.occupation.trim()) newErrors.occupation = 'Current occupation is required';
+    if (!formData.qualification.trim()) newErrors.qualification = 'Qualification is required';
+    if (!formData.emergencyContact.trim()) newErrors.emergencyContact = 'Emergency contact is required';
+  }
     
     if (sectionId === 2) {
       if (!formData.searching.trim()) newErrors.searching = 'This field is required';
@@ -213,28 +216,29 @@ const handleCheckboxChange = (field: 'skillAreas' | 'hearAbout' | 'declarations'
     window.scrollTo(0, 0);
   };
 
-  const uploadCVToSupabase = async (file) => {
-    try {
-      const fileExt = file.name.split('.').pop();
-      const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
-      const filePath = `${fileName}`;
+  const uploadCVToSupabase = async (file: File) => {
+  try {
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+    const filePath = `${fileName}`;
 
-      const { data, error } = await supabase.storage
-        .from('fellowship-cvs')
-        .upload(filePath, file);
+    const { data, error } = await supabase.storage
+      .from('fellowship-cvs')
+      .upload(filePath, file);
 
-      if (error) throw error;
+    if (error) throw error;
 
-      const { data: { publicUrl } } = supabase.storage
-        .from('fellowship-cvs')
-        .getPublicUrl(filePath);
+    const { data: { publicUrl } } = supabase.storage
+      .from('fellowship-cvs')
+      .getPublicUrl(filePath);
 
-      return { url: publicUrl, fileName: file.name };
-    } catch (error) {
-      console.error('Error uploading CV:', error);
-      throw new Error('Failed to upload CV file');
-    }
-  };
+    return { url: publicUrl, fileName: file.name };
+  } catch (error) {
+    console.error('Error uploading CV:', error);
+    throw new Error('Failed to upload CV file');
+  }
+};
+
 
   const handleSubmit = async () => {
     if (!validateSection(6)) return;
@@ -296,11 +300,15 @@ const handleCheckboxChange = (field: 'skillAreas' | 'hearAbout' | 'declarations'
       window.scrollTo(0, 0);
       
     } catch (error) {
-      console.error('Submission error:', error);
-      setErrors({ submit: `Failed to submit application: ${error.message}. Please try again.` });
-    } finally {
-      setIsSubmitting(false);
-    }
+  console.error('Submission error:', error);
+  if (error instanceof Error) {
+    setErrors({ submit: `Failed to submit application: ${error.message}. Please try again.` });
+  } else {
+    setErrors({ submit: 'Failed to submit application due to an unknown error. Please try again.' });
+  }
+} finally {
+  setIsSubmitting(false);
+}
   };
 
   if (submitSuccess) {
@@ -543,8 +551,8 @@ const handleCheckboxChange = (field: 'skillAreas' | 'hearAbout' | 'declarations'
                 <textarea
                   value={formData.searching}
                   onChange={(e) => handleInputChange('searching', e.target.value)}
-                  rows="4"
-                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
+                rows={4}                  
+  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                     errors.searching ? 'border-red-500' : 'border-gray-300'
                   }`}
                 />
@@ -558,7 +566,7 @@ const handleCheckboxChange = (field: 'skillAreas' | 'hearAbout' | 'declarations'
                 <textarea
                   value={formData.immersion}
                   onChange={(e) => handleInputChange('immersion', e.target.value)}
-                  rows="4"
+                rows={4}                  
                   className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                     errors.immersion ? 'border-red-500' : 'border-gray-300'
                   }`}
@@ -573,7 +581,7 @@ const handleCheckboxChange = (field: 'skillAreas' | 'hearAbout' | 'declarations'
                 <textarea
                   value={formData.workExperiment}
                   onChange={(e) => handleInputChange('workExperiment', e.target.value)}
-                  rows="4"
+                rows={4}                  
                   className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                     errors.workExperiment ? 'border-red-500' : 'border-gray-300'
                   }`}
@@ -588,7 +596,7 @@ const handleCheckboxChange = (field: 'skillAreas' | 'hearAbout' | 'declarations'
                 <textarea
                   value={formData.innerShift}
                   onChange={(e) => handleInputChange('innerShift', e.target.value)}
-                  rows="4"
+                rows={4}                  
                   className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                     errors.innerShift ? 'border-red-500' : 'border-gray-300'
                   }`}
@@ -603,7 +611,7 @@ const handleCheckboxChange = (field: 'skillAreas' | 'hearAbout' | 'declarations'
                 <textarea
                   value={formData.indiaExcitement}
                   onChange={(e) => handleInputChange('indiaExcitement', e.target.value)}
-                  rows="4"
+                rows={4}                  
                   className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                     errors.indiaExcitement ? 'border-red-500' : 'border-gray-300'
                   }`}
@@ -618,7 +626,7 @@ const handleCheckboxChange = (field: 'skillAreas' | 'hearAbout' | 'declarations'
                 <textarea
                   value={formData.futurePath}
                   onChange={(e) => handleInputChange('futurePath', e.target.value)}
-                  rows="4"
+                rows={4}                  
                   className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent ${
                     errors.futurePath ? 'border-red-500' : 'border-gray-300'
                   }`}
@@ -807,7 +815,7 @@ const handleCheckboxChange = (field: 'skillAreas' | 'hearAbout' | 'declarations'
                 <textarea
                   value={formData.logisticalSupport}
                   onChange={(e) => handleInputChange('logisticalSupport', e.target.value)}
-                  rows="4"
+                  rows={4}
                   placeholder="Please share any information that will help us support you during the fellowship..."
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                 />

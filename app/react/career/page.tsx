@@ -1,14 +1,21 @@
 'use client';
 
-import { useState } from "react";
+import { useState, ElementType, ReactNode } from "react";
 import { ChevronDown, ChevronUp, Globe, Calendar, MapPin, Users, Award, Heart } from "lucide-react";
-import CareerForm from "./CareerForm"; // 👈 import the component
-import Link from "next/link";  // 👈 Add this
+import CareerForm from "./CareerForm";
+import Link from "next/link";
 
-// Fellowship Card Component
-const FellowshipCard = ({ title, icon: Icon, children }) => {
+// ✅ Define and USE the props interface
+interface FellowshipCardProps {
+  title: string;
+  icon: ElementType; // React component (e.g. Lucide icon)
+  children: ReactNode;
+}
+
+// ✅ Apply the type to the component
+const FellowshipCard: React.FC<FellowshipCardProps> = ({ title, icon: Icon, children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   return (
     <div className="border border-indigo-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition">
       <button
@@ -19,7 +26,11 @@ const FellowshipCard = ({ title, icon: Icon, children }) => {
           <Icon className="w-5 h-5 text-indigo-600" />
           <h3 className="text-lg font-semibold text-indigo-900">{title}</h3>
         </div>
-        {isOpen ? <ChevronUp className="w-5 h-5 text-indigo-600" /> : <ChevronDown className="w-5 h-5 text-indigo-600" />}
+        {isOpen ? (
+          <ChevronUp className="w-5 h-5 text-indigo-600" />
+        ) : (
+          <ChevronDown className="w-5 h-5 text-indigo-600" />
+        )}
       </button>
       {isOpen && (
         <div className="px-6 py-4 text-gray-700 space-y-3">
@@ -40,10 +51,11 @@ const ApplicationForm = () => {
     motivation: ""
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Thank you for your interest! Please visit the official Google Form to complete your application.");
-  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  alert("Thank you for your interest! Please visit the official Google Form to complete your application.");
+};
+
 
   return (
     <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-4 bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-lg border border-indigo-200">
