@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AlertCircle, CheckCircle, Upload, X } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
+import { supabase } from "./supabaseClient"; 
 
 
 interface FormData {
@@ -34,11 +35,8 @@ interface FormData {
   declarations: string[];
 }
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 // ✅ Create client
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 const CareerForm = () => {
   const [currentSection, setCurrentSection] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
