@@ -26,7 +26,7 @@ export default function Footer() {
             <li><a href="/react" className="hover:underline">What is REACT?</a></li>
             <li><a href="/react/themes" className="hover:underline">Themes</a></li>
             <li><a href="/select-user" className="hover:underline">Apply Now</a></li>
-            <li><a href="/react/career" className="hover:underline">Careers</a></li>
+            <li><a href="/react/globe" className="hover:underline">Careers</a></li>
             <li><a href="/react/groundzero" className="hover:underline">GroundZero</a></li>
           </ul>
         </div>

@@ -4,6 +4,7 @@ import { useState, ElementType, ReactNode } from "react";
 import { ChevronDown, ChevronUp, Globe, Calendar, MapPin, Users, Award, Heart } from "lucide-react";
 import CareerForm from "./CareerForm";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
 
 // ✅ Define and USE the props interface
 interface FellowshipCardProps {
@@ -302,7 +303,7 @@ export default function CareersPage() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
         <Link
-          href="/react/career/apply"
+          href="/react/globe/apply"
           className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition shadow-lg"
         >
           Apply Now
@@ -311,12 +312,7 @@ export default function CareersPage() {
       </div>
     </div>
 
-        {/* Application Form */}
-        {/* <div className="my-12">
-          <h2 className="text-3xl font-bold text-center text-indigo-900 mb-8">Start Your Application</h2>
-          <ApplicationForm />
-        </div> */}
-
+       <FAQSection />
         {/* Footer Info */}
         <div className="text-center text-gray-600 space-y-2 py-8 border-t">
           <p className="font-semibold">For queries: <a href="mailto:react@kct.ac.in" className="text-indigo-600 hover:underline">react@kct.ac.in</a></p>
