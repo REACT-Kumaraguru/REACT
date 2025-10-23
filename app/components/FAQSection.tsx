@@ -37,7 +37,7 @@ const faqData = [
       },
       {
         q: "What support do fellows receive?",
-        a: "Shared accommodation, healthy meals, modest stipend (USD 300–350), workspace, mentorship, visa assistance, and certificate after completion.",
+        a: "Shared accommodation, healthy meals, modest stipend, workspace, mentorship, visa assistance, and certificate after completion.",
       },
       {
         q: "Is there a fee to apply or participate?",
