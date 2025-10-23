@@ -112,7 +112,8 @@ const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>> & {
     'I certify that the information provided is true and complete.',
     'I understand that selection is at the discretion of REACT and may be withdrawn if misrepresentation is found.',
     'I agree to the policies and residency requirements outlined on the REACT website.',
-    'I am prepared to travel and reside in India for the fellowship period if selected.'
+    'I am prepared to travel and reside in India for the fellowship period if selected.',
+    'I read the policies and information.'
   ];
 
 const handleInputChange = <K extends keyof FormData>(field: K, value: FormData[K]) => {

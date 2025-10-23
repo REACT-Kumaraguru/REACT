@@ -194,40 +194,91 @@ export default function CareersPage() {
         </div>
 
         {/* Why GLOBE Section */}
-        <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-8 rounded-lg border border-indigo-200">
-          <h2 className="text-3xl font-bold text-indigo-900 mb-6">Why GLOBE Is Unlike Any Other Fellowship</h2>
-          <div className="space-y-4 text-gray-700">
-            <p>Most fellowships give you a project. REACT gives you a <strong>system</strong> to run.</p>
-            <p>Most fellowships give you exposure. REACT gives you <strong>responsibility.</strong></p>
-            <p>Most fellowships make you study change. REACT makes you <strong>create</strong> it — in real time, with real people, in a real institution.</p>
-            <ul className="list-disc list-inside space-y-2 mt-4 ml-4">
-              <li>Design and manage large-scale field immersions</li>
-              <li>Work with students, farmers, NGOs, startups, and policy teams</li>
-              <li>Build systems and frameworks that shape how universities engage with the real world</li>
-              <li>Discover clarity by doing work that matters</li>
-            </ul>
-          </div>
-        </div>
+        {/* Why GLOBE Section */}
+<div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-8 rounded-lg border border-indigo-200">
+  <h2 className="text-3xl font-bold text-indigo-900 mb-6">
+    Why GLOBE Is Unlike Any Other Fellowship
+  </h2>
+  <div className="space-y-4 text-gray-700">
+    <p>
+      Most fellowships give you <strong>projects.</strong> REACT gives you <strong>systems</strong> — complex, living, and real.
+    </p>
+    <p>
+      Most fellowships offer <strong>exposure.</strong> REACT offers <strong>responsibility</strong> — and the space to lead within it.
+    </p>
+    <p>
+      Most fellowships <strong>study change.</strong> REACT <strong>engineers</strong> it — through innovation, policy, and collaboration.
+    </p>
+
+    <p className="mt-4">
+      The GLOBE Fellowship is built for those ready to operate at the frontier of education, enterprise, and governance.
+      Fellows work within the REACT ecosystem — a global blend of think tank, innovation lab, and incubator — where ideas are tested against the realities of people, institutions, and impact.
+    </p>
+
+    <p className="font-semibold text-gray-800 mt-6">You will:</p>
+    <ul className="list-disc list-inside space-y-2 ml-4">
+      <li>Engage directly with field, industrial, and policy environments where transformation is happening in real time.</li>
+      <li>Translate complex systems into models, frameworks, and pathways that others can build upon.</li>
+      <li>Collaborate across disciplines and sectors to address emerging global challenges.</li>
+      <li>Lead initiatives that connect technology, sustainability, and human development in measurable ways.</li>
+    </ul>
+
+    <p className="mt-6">
+      <strong>GLOBE</strong> is distinguished by its depth of autonomy and breadth of engagement. It is designed for individuals who seek to build clarity through creation, lead through systems, and learn through responsibility.
+    </p>
+
+    <p className="mt-4 font-semibold text-gray-800">
+      Here, leadership is not assigned — it is earned through action, reflection, and result.
+    </p>
+  </div>
+</div>
+
 
         {/* Expandable Sections */}
         <div className="space-y-4 my-12">
           <h2 className="text-3xl font-bold text-indigo-900 mb-6">Learn More About the Fellowship</h2>
           
-          <FellowshipCard title="What Fellows Do" icon={Users}>
-            <p className="font-semibold text-indigo-900">As a GLOBE Fellow, you are part of REACT's operational leadership team.</p>
-            <p>You help <strong>run</strong>, <strong>design</strong>, and <strong>document</strong> the systems that power the REACT model.</p>
-            <div className="mt-4">
-              <p className="font-semibold text-gray-800 mb-2">Key Responsibilities:</p>
-              <ul className="list-disc list-inside space-y-1 ml-4">
-                <li><strong>Operations Management:</strong> Execute field immersions, coordinate partners, and manage live deployments</li>
-                <li><strong>System Design:</strong> Create manuals, digital dashboards, and process frameworks</li>
-                <li><strong>Documentation & Communication:</strong> Capture and communicate real-world impact through writing, visuals, and media</li>
-                <li><strong>Global Partnerships:</strong> Facilitate international collaborations and exchange programs</li>
-                <li><strong>Innovation Support:</strong> Work alongside student teams and mentors to refine projects into implementable solutions</li>
-              </ul>
-              <p className="mt-4">You will also design your own <strong>micro-track</strong> — a self-led initiative, experiment, or process innovation that enhances REACT's system.</p>
-            </div>
-          </FellowshipCard>
+<FellowshipCard title="What Fellows Do" icon={Users}>
+  <p className="font-semibold text-indigo-900">
+    As a GLOBE Fellow, you are part of REACT’s operational leadership team — a select, high-trust cohort shaping how real-world learning, innovation, and enterprise come together.
+  </p>
+  <p className="mt-2">
+    You don’t just support REACT — you build and evolve it. You will design, test, and scale systems that connect technology, policy, community, and business — while discovering your own path as a global problem-solver and systems thinker.
+  </p>
+  <p className="mt-2">
+    Every fellow’s journey is flexible and self-directed, adapting to your expertise, curiosity, and long-term goals. Whether you are a technologist, designer, strategist, or entrepreneur, you’ll operate like a founder inside an ecosystem of change.
+  </p>
+
+  <div className="mt-4">
+    <p className="font-semibold text-gray-800 mb-2">Key Responsibilities:</p>
+    <ul className="list-disc list-inside space-y-1 ml-4">
+      <li>
+        <strong>Field & Systems Leadership:</strong> Lead on-ground and industrial immersions, uncover system gaps, and pilot interventions. Move between grassroots and boardrooms — connecting field realities with institutional and enterprise strategy.
+      </li>
+      <li>
+        <strong>System Architecture & Innovation Design:</strong> Architect frameworks, digital dashboards, and operational blueprints that others will use. Design data-driven, tech-enabled, and policy-informed innovations that make REACT globally replicable.
+      </li>
+      <li>
+        <strong>Strategic Documentation & Thought Leadership:</strong> Document not just activities but insights. Produce high-quality narratives, models, and visual systems that shape REACT’s knowledge base and global positioning. Publish reflections that influence practice beyond the program.
+      </li>
+      <li>
+        <strong>Global Partnerships & Institutional Building:</strong> Co-create with universities, industries, and innovation councils worldwide. Represent REACT in international exchanges and help form new collaborations, programs, and spin-off initiatives.
+      </li>
+      <li>
+        <strong>Enterprise & Innovation Acceleration:</strong> Mentor student innovators, validate ideas, and guide early-stage prototypes into ventures, pilots, or policy frameworks. Learn the full innovation-to-implementation pipeline from concept to field impact.
+      </li>
+    </ul>
+
+    <p className="mt-4">
+      <strong>Self-Led Micro-Track:</strong> Develop your own micro-track — a personal experiment or system innovation within REACT. It could be a product, a toolkit, a research model, or a partnership framework. You design it, own it, and publish its learnings as part of REACT’s legacy.
+    </p>
+
+    <p className="mt-4 font-semibold text-gray-800">
+      In Essence: You’ll operate like a mini founder, not a participant — building live systems, shaping new methods, and defining what 21st-century education and innovation can look like.
+    </p>
+  </div>
+</FellowshipCard>
+
 
           <FellowshipCard title="Who Can Apply" icon={Globe}>
             <p>REACT GLOBE welcomes applicants from around the world who are eager to live and learn in India while building real-world systems.</p>
