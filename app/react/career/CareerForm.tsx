@@ -2,6 +2,38 @@ import React, { useState } from 'react';
 import { AlertCircle, CheckCircle, Upload, X } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
 
+
+interface FormData {
+  fullName: string;
+  preferredName: string;
+  nationality: string;
+  age: string;
+  email: string;
+  whatsapp: string;
+  linkedin: string;
+  occupation: string;
+  qualification: string;
+  emergencyContact: string;
+  searching: string;
+  immersion: string;
+  workExperiment: string;
+  innerShift: string;
+  indiaExcitement: string;
+  futurePath: string;
+  skillAreas: string[];
+  cvFile: File | null;
+  portfolioLink: string;
+  residencyCommitment: string;
+  passport: string;
+  englishComfort: string;
+  participationType: string;
+  logisticalSupport: string;
+  ambassadorInterest: string;
+  submissionTiming: string;
+  hearAbout: string[];
+  declarations: string[];
+}
+
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
@@ -13,36 +45,37 @@ const CareerForm = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errors, setErrors] = useState({});
   
-  const [formData, setFormData] = useState({
-    fullName: '',
-    preferredName: '',
-    nationality: '',
-    age: '',
-    email: '',
-    whatsapp: '',
-    linkedin: '',
-    occupation: '',
-    qualification: '',
-    emergencyContact: '',
-    searching: '',
-    immersion: '',
-    workExperiment: '',
-    innerShift: '',
-    indiaExcitement: '',
-    futurePath: '',
-    skillAreas: [],
-    cvFile: null,
-    portfolioLink: '',
-    residencyCommitment: '',
-    passport: '',
-    englishComfort: '',
-    participationType: '',
-    logisticalSupport: '',
-    ambassadorInterest: '',
-    submissionTiming: '',
-    hearAbout: [],
-    declarations: []
-  });
+  const [formData, setFormData] = useState<FormData>({
+  fullName: '',
+  preferredName: '',
+  nationality: '',
+  age: '',
+  email: '',
+  whatsapp: '',
+  linkedin: '',
+  occupation: '',
+  qualification: '',
+  emergencyContact: '',
+  searching: '',
+  immersion: '',
+  workExperiment: '',
+  innerShift: '',
+  indiaExcitement: '',
+  futurePath: '',
+  skillAreas: [],
+  cvFile: null,
+  portfolioLink: '',
+  residencyCommitment: '',
+  passport: '',
+  englishComfort: '',
+  participationType: '',
+  logisticalSupport: '',
+  ambassadorInterest: '',
+  submissionTiming: '',
+  hearAbout: [],
+  declarations: []
+});
+
 
   const [cvFileName, setCvFileName] = useState('');
 
@@ -84,21 +117,22 @@ const CareerForm = () => {
     'I am prepared to travel and reside in India for the fellowship period if selected.'
   ];
 
-  const handleInputChange = (field, value) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-    if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: null }));
-    }
-  };
+const handleInputChange = <K extends keyof FormData>(field: K, value: FormData[K]) => {
+  setFormData(prev => ({ ...prev, [field]: value }));
+  if (errors[field]) {
+    setErrors(prev => ({ ...prev, [field]: null }));
+  }
+};
 
-  const handleCheckboxChange = (field, value) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: prev[field].includes(value)
-        ? prev[field].filter(item => item !== value)
-        : [...prev[field], value]
-    }));
-  };
+const handleCheckboxChange = (field: 'skillAreas' | 'hearAbout' | 'declarations', value: string) => {
+  setFormData(prev => ({
+    ...prev,
+    [field]: prev[field].includes(value)
+      ? prev[field].filter(item => item !== value)
+      : [...prev[field], value]
+  }));
+};
+
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
