@@ -102,10 +102,10 @@ const faqData = [
 ];
 
 export default function FAQSection() {
-  const [expanded, setExpanded] = useState(null);
+  const [expanded, setExpanded] = useState<string | null>(null);
   const [visibleCount, setVisibleCount] = useState(2);
 
-  const toggle = (index) => {
+  const toggle = (index: string) => {
     setExpanded(expanded === index ? null : index);
   };
 
