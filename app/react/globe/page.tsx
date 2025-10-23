@@ -248,7 +248,7 @@ export default function CareersPage() {
             <ul className="space-y-2">
               <li><strong>Accommodation:</strong> Comfortable shared housing near REACT Lab campus</li>
               <li><strong>Meals:</strong> Healthy food provided on campus</li>
-              <li><strong>Stipend:</strong> Modest monthly allowance to cover local expenses (approx. USD 300-350)</li>
+              <li><strong>Stipend:</strong> Modest monthly allowance to cover local expenses</li>
               <li><strong>Volunteer Option:</strong> Applicants may opt to contribute in a volunteer capacity (with food and accommodation provided)</li>
               <li><strong>Visa Assistance:</strong> Official invitation and documentation for Indian visa processing</li>
               <li><strong>Workspace & Tools:</strong> Access to REACT Lab infrastructure, digital systems, and partner networks</li>
