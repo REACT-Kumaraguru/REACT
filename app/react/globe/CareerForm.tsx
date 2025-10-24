@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { AlertCircle, CheckCircle, Upload, X } from 'lucide-react';
+import { AlertCircle, CheckCircle, Upload, X,FileText } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
 import { supabase } from "./supabaseClient"; 
-
 
 interface FormData {
   fullName: string;
@@ -34,6 +33,179 @@ interface FormData {
   hearAbout: string[];
   declarations: string[];
 }
+
+// Policies Modal Component
+const PoliciesModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto">
+      <div className="bg-white rounded-lg max-w-4xl w-full my-8 flex flex-col max-h-[90vh]">
+        {/* Header */}
+        <div className="bg-blue-600 text-white p-6 flex justify-between items-center rounded-t-lg flex-shrink-0">
+          <div className="flex items-center gap-3">
+            <FileText size={28} />
+            <h2 className="text-2xl font-bold">Policies & Information</h2>
+          </div>
+          <button
+            onClick={onClose}
+            className="hover:bg-blue-700 rounded-full p-2 transition"
+          >
+            <X size={24} />
+          </button>
+        </div>
+
+        {/* Scrollable Content */}
+        <div className="overflow-y-auto p-6 flex-1">
+          <div className="space-y-6">
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">1. Residency Requirement</h3>
+              <p className="text-gray-700">
+                Fellows must reside full-time in Coimbatore, India, for the entire duration of the fellowship (January – June 2026). During this term, fellows are required to maintain their primary residence locally and be available for full-time engagement in the fellowship activities.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">2. Travel, Visa & Arrival</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Travel to and from India is arranged by the fellow, at their own cost unless otherwise specified.</li>
+                <li>REACT will provide formal invitation letters, orientation guidance, and limited visa-assistance for eligible fellows.</li>
+                <li>Fellows are responsible for ensuring they hold the correct visa/permit for residency, field visits and programme participation. REACT does not guarantee visa approval.</li>
+                <li>Arrival in India must occur before the stipulated orientation start date; late arrivals may jeopardise participation.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">3. Health, Safety & Insurance</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Valid international health insurance (valid in India for the full programme period) is mandatory before arrival. Proof must be submitted by the deadline specified in the offer letter.</li>
+                <li>Fellows must comply with any local health regulations, medical requirements and safety protocols promulgated by REACT partner institutions or host organisations.</li>
+                <li>REACT is not liable for personal medical expenses, emergencies or travel delays unless explicitly specified in the fellowship offer.</li>
+                <li>Fellows must keep REACT informed of any medical or personal conditions that could affect programme participation.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">4. Language & Working Medium</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>English is the official working language of the fellowship; all major communications, deliverables and coordination will occur in English.</li>
+                <li>Translators or local language assistance may be provided during field-work or community engagements, but fellows are responsible for navigating local interactions when required.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">5. Conduct, Ethics & Community Respect</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Fellows must act in accordance with the values of REACT: collaboration, humility, integrity, and systems-thinking.</li>
+                <li>Respect for community cultures, local customs, institutional norms and partner ecosystems is mandatory. Any behaviour that undermines host-community trust or REACT's reputation may result in disciplinary action or termination.</li>
+                <li>Fellows must adhere to the host institution's code of conduct, including guidelines on harassment, discrimination, harassment-free environment, and ethical engagement.</li>
+                <li>Fellows must maintain confidentiality with respect to sensitive information, data and partner-agreements, unless otherwise authorised.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">6. Diversity, Inclusion & Equal Opportunity</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>REACT is committed to providing equal opportunity and inclusive access to people of all backgrounds, identities, nationalities, genders, and abilities.</li>
+                <li>Applications are encouraged from a diverse set of candidates; fellowship decisions will be made on merit, mission-fit and readiness for immersive work.</li>
+                <li>Any request for disability accommodations or special support must be made during the application process so REACT can reasonably plan support.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">7. Fellowship Engagement & Full-time Participation</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>The fellowship expects full-time commitment (Monday–Friday, plus designated field-visits or weekend engagement as required by the programme). Fellows must not undertake another full-time job, fellowship, study programme or major external obligation during the term.</li>
+                <li>Fellows must attend all compulsory orientation sessions, leadership retreats, cohort meetings, field immersions, evaluation events and final showcase. Absences must be approved in advance and may impact certification or completion status.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">8. Deliverables & Intellectual Output</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Fellows must complete assigned deliverables within the timeframes specified by the REACT leadership team (e.g., system-design toolkits, documentation, field reports, presentation).</li>
+                <li>Intellectual property rights relating to materials created in the course of the fellowship will be governed by REACT's institutional policy (which will be provided to fellows upon enrolment). Unless otherwise specified, REACT retains rights to use, reproduce and publish the work.</li>
+                <li>Fellows may be required to provide a final report or presentation at the conclusion of the fellowship term.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">9. Termination, Withdrawal & Cancellation</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>REACT reserves the right to reject, delay or withdraw any applicant or fellow at its sole discretion — including in cases of misrepresentation, failure to meet eligibility criteria, inadequate performance, breach of policy, visa refusal, medical incapacity or other operational reasons.</li>
+                <li>REACT also reserves the right to modify or cancel the fellowship programme, change the start/end dates, revise stipend/housing provisions, alter residency requirements or relocate the programme site — with as much notice as possible to enrolled fellows.</li>
+                <li>In the event of early termination of a fellow's participation (voluntary withdrawal, dismissal, visa denial etc.), fellows may not receive full benefits/salary/stipend and may be required to return any funds or allowances already disbursed.</li>
+                <li>Fellows who fail to comply with residency, deliverables or conduct norms may face termination of the fellowship or forfeiture of certificate and alumni eligibility.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">10. Accommodation, Meals & Stipend</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>REACT will provide accommodation (shared housing) and meals according to programme guidelines for fellows enrolled with full support.</li>
+                <li>Fellows must pay for incidental personal costs outside the standard arrangement unless otherwise specified.</li>
+                <li>Applicants may also indicate a volunteer option (food + accommodation only) in which case stipend may not apply; details will be provided in the formal offer.</li>
+                <li>Housing, meal plans and stipend amounts are subject to change — fellows will be notified of any changes prior to arrival.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">11. Privacy, Data & Use of Image</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Fellows consent to REACT using their name, photo, video, project output and story for promotional, reporting and alumni-network purposes. If any fellow wishes to limit such use, they must notify REACT in writing prior to joining.</li>
+                <li>Fellows must comply with institutional data-protection and confidentiality requirements; personally identifiable data of collaborators must not be shared externally without consent.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">12. Travel, Field-Visits & Risk Management</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Field visits to partner communities, rural sites or industries are integral to the programme. Fellows must abide by all safety guidelines, sign necessary waivers, carry required personal protective equipment and travel insurance if required.</li>
+                <li>REACT will provide orientation and risk briefings; fellows are responsible for personal risk minimisation.</li>
+                <li>In case of natural disaster, civil unrest or other unforeseeable events, REACT may temporarily suspend or relocate field activity.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">13. Intellectual Honesty & Representation</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Fellows must ensure all work submitted is original, appropriately referenced and free of plagiarism or misconduct. Any violation may lead to termination.</li>
+                <li>Fellows must present themselves and their work accurately in all public representations.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">14. Acknowledgement & Alumni Status</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Upon satisfactory completion, fellows receive a certificate of completion and access to the REACT Global Alumni Network.</li>
+                <li>Alumni obligations may include participation in periodic network events, updates on personal progress, and contributing to the REACT community, though alumni participation is voluntary.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">15. Applicable Law & Dispute Resolution</h3>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                <li>The fellowship is hosted in India and will be governed by Indian institutional policy and applicable local law.</li>
+                <li>Any disputes will be addressed first internally through REACT's designated grievance mechanism; applicable Indian jurisdiction will apply for unresolved issues.</li>
+                <li>REACT may amend these policies at any time with reasonable notice to current fellows.</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="border-t p-4 bg-gray-50 flex justify-end rounded-b-lg flex-shrink-0">
+          <button
+            onClick={onClose}
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 
 // ✅ Create client
@@ -85,6 +257,13 @@ const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>> & {
     { id: 5, title: 'Engagement Track & Support', icon: '🤝' },
     { id: 6, title: 'Application Timing & Declaration', icon: '📅' }
   ];
+
+  const [showPolicies, setShowPolicies] = useState(false);
+
+  const handlePoliciesClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  e.preventDefault();
+  setShowPolicies(true);
+};
 
   const skillOptions = [
     'Program Management / Operations',
@@ -196,7 +375,7 @@ const validateSection = (sectionId: number) => {
     if (sectionId === 6) {
       if (!formData.submissionTiming) newErrors.submissionTiming = 'Please acknowledge the submission timing';
       if (formData.hearAbout.length === 0) newErrors.hearAbout = 'Please select at least one option';
-      if (formData.declarations.length !== 4) newErrors.declarations = 'All declarations must be checked';
+      if (formData.declarations.length !== 5) newErrors.declarations = 'All declarations must be checked';
     }
     
     setErrors(newErrors);
@@ -893,12 +1072,12 @@ const validateSection = (sectionId: number) => {
                 {errors.hearAbout && <p className="text-red-500 text-sm mt-1">{errors.hearAbout}</p>}
               </div>
 
-              <div>
+         <div>
                 <label className="block text-sm font-medium text-gray-700 mb-4">
                   Final Declaration - Please confirm: *
                 </label>
                 <div className="space-y-3 bg-gray-50 p-4 rounded-lg">
-                  {declarationOptions.map((option) => (
+                  {declarationOptions.map((option, index) => (
                     <label key={option} className="flex items-start">
                       <input
                         type="checkbox"
@@ -906,7 +1085,22 @@ const validateSection = (sectionId: number) => {
                         onChange={() => handleCheckboxChange('declarations', option)}
                         className="w-4 h-4 mt-1 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
                       />
-                      <span className="ml-2 text-gray-700">{option}</span>
+                      <span className="ml-2 text-gray-700">
+                        {index === 4 ? (
+                          <>
+                            I read the{' '}
+                            <button
+                              onClick={handlePoliciesClick}
+                              className="text-blue-600 hover:text-blue-800 underline font-medium"
+                            >
+                              policies and information
+                            </button>
+                            .
+                          </>
+                        ) : (
+                          option
+                        )}
+                      </span>
                     </label>
                   ))}
                 </div>
@@ -960,6 +1154,8 @@ const validateSection = (sectionId: number) => {
             )}
           </div>
         </div>
+                <PoliciesModal isOpen={showPolicies} onClose={() => setShowPolicies(false)} />
+
       </div>
     </div>
   );

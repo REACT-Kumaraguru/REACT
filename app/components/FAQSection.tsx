@@ -83,7 +83,7 @@ const faqData = [
     items: [
       {
         q: "How do I apply?",
-        a: "Submit your application via the official Google Form on react.kct.ac.in/globe. Include your CV, LinkedIn, and short reflections. Early applications reviewed first.",
+        a: "Submit your application via the above forms. Include your CV, LinkedIn, and short reflections. Early applications reviewed first.",
       },
       {
         q: "What happens after I apply?",
