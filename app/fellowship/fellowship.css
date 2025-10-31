@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.hero {
+  background: linear-gradient(135deg,#5b2df7 0%,#a23df0 40%,#a73be6 100%);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.pill {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 16px 0 8px;
+}
+
+.lead {
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  font-weight: 600;
+}
