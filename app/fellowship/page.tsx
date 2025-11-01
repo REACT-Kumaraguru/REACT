@@ -29,7 +29,7 @@ export default function Page() {
       <div className="nav" role="navigation" id="site-nav" aria-label="Main navigation">
         <div className="nav-inner">
           <a
-  href="https://react.kct.ac.in/"
+  href="/"
   className="brand"
   aria-label="REACT home"
 >
@@ -225,3 +225,4 @@ export default function Page() {
     </>
   );
 }
+
