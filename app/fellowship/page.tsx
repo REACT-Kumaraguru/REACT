@@ -28,7 +28,13 @@ export default function Page() {
 
       <div className="nav" role="navigation" id="site-nav" aria-label="Main navigation">
         <div className="nav-inner">
-          <div className="brand" aria-hidden="true">REACT</div>
+          <a
+  href="https://react.kct.ac.in/"
+  className="brand"
+  aria-label="REACT home"
+>
+  REACT
+</a>
           <div className="nav-links" role="menubar" aria-label="Primary">
             <a role="menuitem" href="#about">About</a>
             <a role="menuitem" href="#process">Process</a>
@@ -95,7 +101,7 @@ export default function Page() {
           ))}
         </div>
       </section>
-      
+
 <section id="who" className="container">
   <div className="who-wrap">
     <div>
