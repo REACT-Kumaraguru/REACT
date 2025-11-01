@@ -95,32 +95,34 @@ export default function Page() {
           ))}
         </div>
       </section>
+      
+<section id="who" className="container">
+  <div className="who-wrap">
+    <div>
+      <h2>Who should apply?</h2>
+      <p className="muted">You might be a fit if any of these sound like you:</p>
+      <ul>
+        <li><strong>Curious doer:</strong> You want to learn by doing — not by exams.</li>
+        <li><strong>Early-stage founder:</strong> You have an idea and want to validate it in the field.</li>
+        <li><strong>Cross-disciplinary thinker:</strong> You blend engineering with social systems.</li>
+        <li><strong>Committed team player:</strong> You’ll work closely with communities and mentors.</li>
+        <li><strong>Entrepreneurial builder:</strong> You’re eager to transform an idea into a tangible product or service — laying the foundation for a startup or venture that creates lasting impact.</li>
+      </ul>
+    </div>
 
-      <section id="who" className="container">
-        <div className="who-wrap">
-          <div>
-            <h2>Who should apply?</h2>
-            <p className="muted">You might be a fit if any of these sound like you:</p>
-            <ul>
-              <li><strong>Curious doer:</strong> You want to learn by doing — not by exams.</li>
-              <li><strong>Early-stage founder:</strong> You have an idea and want to validate it in the field.</li>
-              <li><strong>Cross-disciplinary thinker:</strong> You blend engineering with social systems.</li>
-              <li><strong>Committed team player:</strong> You’ll work closely with communities and mentors.</li>
-            </ul>
-          </div>
+    <div className="highlight-card">
+      <h4>Program highlights</h4>
+      <ul>
+        <li>6-month full-time fellowship (Jan–Jun 2026)</li>
+        <li>Funding, mentorship, and technical support</li>
+        <li>Field immersion &amp; community co-design</li>
+        <li>Path to prototype, pilot, and launch</li>
+      </ul>
+      <div className="cohort">Cohort size: 25–30 fellows</div>
+    </div>
+  </div>
+</section>
 
-          <div className="highlight-card">
-            <h4>Program highlights</h4>
-            <ul>
-              <li>6-month full-time fellowship (Jan–Jun 2026)</li>
-              <li>Funding, mentorship, and technical support</li>
-              <li>Field immersion &amp; community co-design</li>
-              <li>Path to prototype, pilot, and launch</li>
-            </ul>
-            <div className="cohort">Cohort size: 25–30 fellows</div>
-          </div>
-        </div>
-      </section>
 
       <section className="cta-block">
         <div className="cta-inner">
@@ -146,7 +148,22 @@ export default function Page() {
         a{outline-offset:3px}
         .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
         .skip-link:focus{left:12px;top:12px;width:auto;height:auto;padding:8px 12px;background:#111827;color:#fff;border-radius:6px;z-index:9999}
-        .nav{position:fixed;left:0;right:0;top:12px;z-index:60;display:flex;justify-content:center;pointer-events:none;transition:background 240ms ease,box-shadow 240ms ease,top 240ms ease}
+        .nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* centers items vertically */
+  pointer-events: none;
+  transition: background 240ms ease, box-shadow 240ms ease, top 240ms ease;
+  background: linear-gradient(135deg, #5b2df7 0%, #a23df0 40%, #a73be6 100%);
+  padding: 20px 0; /* increased vertical padding */
+  height: 80px; /* optional: ensures consistent height */
+}
+        /* <-- only change made: nav becomes a solid white bar when scrolled */
         .nav.scrolled{background:#ffffff;box-shadow:0 6px 24px rgba(15,15,15,0.08);top:0;padding-top:6px;padding-bottom:6px}
         .nav-inner{width:95%;max-width:var(--max-width);display:flex;align-items:center;justify-content:space-between;pointer-events:all;padding:0 8px}
         .brand{font-weight:800;color:white;letter-spacing:0.4px;transition:color 240ms ease}
