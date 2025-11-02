@@ -49,14 +49,14 @@ export default function WhoAreYou() {
           <PeelCard
             title="I'm a Student"
             description="Currently pursuing or recently finished my education"
-            href="/apply?type=student"
+            href="/react/program"
             bg="bg-blue-100/70"
             hover="hover:bg-blue-100/90"
           />
           <PeelCard
             title="I'm a Professional"
             description="Working or experienced — ready to take a break"
-            href="/apply?type=professional"
+            href="/react/program"
             bg="bg-green-100/70"
             hover="hover:bg-green-100/90"
           />

@@ -66,28 +66,23 @@ useEffect(() => {
   const announcements = [
     {
       id: 1,
-      title: "Registration Deadline - May 21, 2025",
-      description: "Complete your application before the deadline closes."
+      title: "REACT Student Fellow 2025 Cohort Application closed",
+      description: "UG and Master’s students — applications are now closed. Submit the interest form to be the first to hear when it reopens."
     },
     {
       id: 2,
-      title: "Results Announcement - June 1-7, 2025",
-      description: "Results will be announced in the first week of June."
+      title: "REACT GLOBE Fellowship — Ongoing (Closes in 10 Days)",
+      description: "Applications are open — closing soon. Round 1 -31st October | Round 2 -10th November ."
     },
     {
       id: 3,
-      title: "Selection Process ( tentative )- June 15-21, 2025",
-      description: "Selection process begins in the third week of June."
+      title: "REACT Volunteering Fellow — Opening Soon",
+      description: "Applications opening soon. Submit the interest form to get early access to the opportunity."
     },
     {
       id: 4,
-      title: "Orientation Webinar - June 25, 2025",
-      description: "Mandatory orientation webinar for selected candidates."
-    },
-    {
-      id: 5,
-      title: "Fellowship Kickoff - July 1, 2025",
-      description: "Official kickoff of the REACT Fellowship Program."
+      title: "REACT Citizen Fellow —  Opening Soon",
+      description: "A 2-month online leadership cohort open to all."
     }
   ];
 
@@ -96,20 +91,20 @@ useEffect(() => {
     {
       id: 1,
       title: "REACT Fellowship Orientation",
-      date: "June 1, 2025",
+      date: "November 1, 2025",
       description: "Official orientation for the fellowship program."
     },
     {
       id: 2,
-      title: "AI Ethics in Healthcare Symposium",
-      date: "July 15, 2025",
-      description: "Exploring ethical considerations in AI healthcare applications."
+      title: "REACT Problem to Idea Mapping",
+      date: "October 21, 2025",
+      description: "Conducting an event to make students understand the importance of user centric design."
     },
     {
       id: 3,
-      title: "Technical Workshop",
-      date: "July 22-23, 2025",
-      description: "Building Responsible AI Systems workshop."
+      title: "REACT Fellows Meet",
+      date: "November 3, 2025",
+      description: "To understand the progress and future scope planning."
     }
   ];
   return (

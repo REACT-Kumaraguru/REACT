@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navigation from "./components/landing/Navigation"; // ✅ Move navbar here
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* ✅ Place Navigation here so it persists across routes */}
+        <Navigation />
+
+        {/* ✅ Add top padding so content isn’t hidden behind the fixed navbar */}
+        <main className="pt-16">{children}</main>
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import { ChevronDown, ChevronUp, Globe, Calendar, MapPin, Users, Award, Heart } 
 import CareerForm from "./CareerForm";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
+import OurFellows2024 from '@/components/OurFellows2024';
 
 // ✅ Define and USE the props interface
 interface FellowshipCardProps {
@@ -362,6 +363,7 @@ export default function CareersPage() {
         </div>
       </div>
     </div>
+    <OurFellows2024 />
 
        <FAQSection />
         {/* Footer Info */}

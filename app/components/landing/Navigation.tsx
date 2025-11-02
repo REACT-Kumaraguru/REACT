@@ -27,15 +27,18 @@ const Navigation = () => {
             <Link href="/react" className="text-black hover:text-gray-600">
               About
             </Link>
-            <Link href="/react/themes" className="text-black hover:text-gray-600">
-              Themes
+            <Link href="/react/program" className="text-black hover:text-gray-600">
+              Programmes
             </Link>
              <Link href="/react/team" className="text-black hover:text-gray-600">
               Team
             </Link>
+            {/* <Link href="/react/globe" className="text-black hover:text-gray-600">
+              Fellowship
+            </Link>
             <Link href="/select-user" className="text-black hover:text-gray-600">
               Apply
-            </Link>
+            </Link> */}
             <Link href="/react/contact" className="text-black hover:text-gray-600">
               Contact
             </Link>
@@ -69,11 +72,11 @@ const Navigation = () => {
               About
             </Link>
             <Link 
-              href="/react/themes"
+              href="/react/program"
               className="block px-3 py-2 text-black hover:bg-gray-100 rounded-md"
               onClick={toggleMobileMenu}
             >
-              Themes
+              Programmes
             </Link>
             <a 
               href="/team.pdf" 
@@ -84,7 +87,7 @@ const Navigation = () => {
             >
               Team
             </a>
-            <a 
+            {/* <a 
               href="/REACT Fellowship_ Credits & Academic Recognition.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
@@ -100,6 +103,13 @@ const Navigation = () => {
             >
               Apply
             </Link>
+            <Link 
+              href="/react/globe"
+              className="block px-3 py-2 text-black hover:bg-gray-100 rounded-md"
+              onClick={toggleMobileMenu}
+            >
+              Fellowship
+            </Link> */}
             <Link 
               href="/react/contact"
               className="block px-3 py-2 text-black hover:bg-gray-100 rounded-md"
