@@ -16,6 +16,15 @@ export async function POST(request: Request) {
           <p><strong>Email:</strong> <a href="mailto:${data.email}">${data.email}</a></p>
           <p><strong>Phone:</strong> ${data.phone}</p>
           <p><strong>Country:</strong> ${data.country}</p>
+          <p><strong>Newsletter Subscription:</strong> 
+            <span style="display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: bold; ${
+              data.subscribe 
+                ? 'background: #d1fae5; color: #065f46;' 
+                : 'background: #fee2e2; color: #991b1b;'
+            }">
+              ${data.subscribe ? '✓ YES - Subscribed' : '✗ NO - Not Subscribed'}
+            </span>
+          </p>
           <p><strong>Message:</strong> ${data.message || 'No message provided'}</p>
           <p><strong>Submitted at:</strong> ${new Date(data.submittedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST</p>
         </div>
@@ -31,6 +40,7 @@ Name: ${data.name}
 Email: ${data.email}
 Phone: ${data.phone}
 Country: ${data.country}
+Newsletter Subscription: ${data.subscribe ? 'YES - Subscribed' : 'NO - Not Subscribed'}
 Message: ${data.message || 'No message provided'}
 
 Submitted at: ${new Date(data.submittedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST

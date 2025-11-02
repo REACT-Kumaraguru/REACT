@@ -24,7 +24,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/react" className="text-black hover:text-gray-600">
+            <Link href="/" className="text-black hover:text-gray-600">
               About
             </Link>
             <Link href="/react/program" className="text-black hover:text-gray-600">
@@ -65,7 +65,7 @@ const Navigation = () => {
         <div className="md:hidden bg-white border-t">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link 
-              href="/react"
+              href="/"
               className="block px-3 py-2 text-black hover:bg-gray-100 rounded-md"
               onClick={toggleMobileMenu}
             >

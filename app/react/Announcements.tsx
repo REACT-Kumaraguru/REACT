@@ -15,7 +15,8 @@ const Announcements = () => {
     email: "",
     phone: "",
     country: "",
-    message: ""
+    message: "",
+    subscribe:false
   });
 
   const announcements = [
@@ -71,9 +72,11 @@ const Announcements = () => {
       email: "",
       phone: "",
       country: "",
-      message: ""
+      message: "",
+      subscribe: false
     });
   };
+  
 
   const closeModal = () => {
     setShowModal(false);
@@ -92,7 +95,7 @@ const Announcements = () => {
     return phoneRegex.test(phone.trim());
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     // Clear error when user starts typing
     if (errors[field]) {
@@ -146,6 +149,7 @@ const Announcements = () => {
         phone: formData.phone,
         country: formData.country,
         message: formData.message,
+        subscribe: formData.subscribe,
         submittedAt: new Date().toISOString()
       };
 
@@ -257,7 +261,7 @@ const Announcements = () => {
         </div>
 
         {/* General Express Interest Button */}
-        <div className="mt-8 p-6 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg border border-indigo-200">
+        {/* <div className="mt-8 p-6 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg border border-indigo-200">
           <h2 className="text-xl font-semibold text-indigo-900 mb-2">Interested in Future Programs?</h2>
           <p className="text-gray-700 mb-4">
             Can't find the right program opening now? Express your interest and we'll notify you when new opportunities arise.
@@ -268,7 +272,7 @@ const Announcements = () => {
           >
             Express General Interest
           </button>
-        </div>
+        </div> */}
 
         <div className="mt-12 p-6 bg-blue-50 rounded-lg border border-blue-100">
           <h2 className="text-xl font-semibold text-blue-800 mb-3">Important Reminders</h2>
@@ -431,6 +435,18 @@ const Announcements = () => {
                       <p className="text-red-700 text-sm">{errors.submit}</p>
                     </div>
                   )}
+                <div className="flex items-start gap-2">
+  <input
+    type="checkbox"
+    id="newsletter"
+    checked={formData.subscribe}
+    onChange={(e) => handleInputChange("subscribe", e.target.checked)}
+    className="mt-1 w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+  />
+  <label htmlFor="newsletter" className="text-sm text-gray-700">
+    I’m interested in receiving newsletters and updates.
+  </label>
+</div>
 
                   <button
                     onClick={handleSubmit}
