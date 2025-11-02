@@ -28,7 +28,7 @@ const ProgramsPage = () => {
       description: "Step beyond classrooms into real-world learning — where students in India design, build, and implement solutions that create tangible impact.",
       gradient: "from-blue-500 to-indigo-600",
       bgGradient: "from-blue-50 to-indigo-50",
-      link: "/react",
+      link: "/fellowship",
       available: true
     },
     {
