@@ -14,7 +14,7 @@ export default function Home() {
       <WhoAreWe />
       {/* <TimelineSection /> */}
       <WhoAreYou />
-      <ThemesPreview />
+      {/* <ThemesPreview /> */}
       <Testimonials />
       <Motivations />
       <Footer />
