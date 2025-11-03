@@ -24,7 +24,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, photo, linkedin }
         rel="noopener noreferrer"
         className="text-blue-500 text-sm mt-1 hover:underline"
       >
-        LinkedIn
+        Profile
       </a>
     )}
   </div>
@@ -46,7 +46,7 @@ const team: ProfileCardProps[] = [
   {
     name: 'Brathikan',
     role: 'Head - React',
-    linkedin: 'https://www.linkedin.com/in/brathikan/',
+    linkedin: '/react/team/brathikan',
     photo: '/team/brathikan.jpg',
   },
   {
