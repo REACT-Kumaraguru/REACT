@@ -29,7 +29,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-6 flex items-center gap-3 text-blue-600">
             <Award className="w-5 h-5" />
-            <span className="text-sm font-medium">Chevening Scholar • Founder, Kinowave</span>
+            <span className="text-sm font-medium">Chevening Scholar • Founder, REACT • Co-Founder, Kinowave</span>
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
