@@ -30,9 +30,9 @@ const Navigation = () => {
             <Link href="/react/program" className="text-black hover:text-gray-600">
               Programmes
             </Link>
-             {/* <Link href="/react/team" className="text-black hover:text-gray-600">
+             <Link href="/react/team" className="text-black hover:text-gray-600">
               Team
-            </Link> */}
+            </Link>
             {/* <Link href="/react/globe" className="text-black hover:text-gray-600">
               Fellowship
             </Link>
@@ -78,7 +78,7 @@ const Navigation = () => {
             >
               Programmes
             </Link>
-            {/* <a 
+            <a 
               href="/team.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
@@ -86,7 +86,7 @@ const Navigation = () => {
               onClick={toggleMobileMenu}
             >
               Team
-            </a> */}
+            </a>
             {/* <a 
               href="/REACT Fellowship_ Credits & Academic Recognition.pdf" 
               target="_blank" 
