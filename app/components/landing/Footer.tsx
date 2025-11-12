@@ -23,7 +23,7 @@ export default function Footer() {
         <div>
           <h3 className="text-lg !text-white font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-gray-300">
-            <li><a href="/react" className="hover:underline">What is REACT?</a></li>
+            <li><a href="/react/program" className="hover:underline">What is REACT?</a></li>
             <li><a href="/react/themes" className="hover:underline">Themes</a></li>
             <li><a href="/select-user" className="hover:underline">Apply Now</a></li>
             <li><a href="/react/globe" className="hover:underline">Careers</a></li>
@@ -32,14 +32,14 @@ export default function Footer() {
         </div>
 
         {/* Downloads */}
-        <div>
+        {/* <div>
           <h3 className="text-lg font-semibold !text-white mb-3">Downloads</h3>
           <ul className="space-y-2 text-gray-300">
             <li><a href="/docs/react-brochure.pdf" target="_blank" className="hover:underline">REACT Brochure</a></li>
             <li><a href="/docs/theme-handbook.pdf" target="_blank" className="hover:underline">Theme Handbook</a></li>
             <li><a href="/docs/schedule.pdf" target="_blank" className="hover:underline">Program Schedule</a></li>
           </ul>
-        </div>
+        </div> */}
       </div>
 
       <div className="mt-10 flex justify-center gap-6 text-gray-400">
@@ -49,12 +49,12 @@ export default function Footer() {
         <a rel="noopener" href="https://www.linkedin.com/company/react-ki/" target="_blank" aria-label="LinkedIn">
           <Linkedin className="w-5 h-5 hover:text-white transition-colors" />
         </a>
-        <a rel="noopener" href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+        {/* <a rel="noopener" href="https://www.twitter.com" target="_blank" aria-label="Twitter">
           <Twitter className="w-5 h-5 hover:text-white transition-colors" />
         </a>
         <a rel="noopener" href="https://www.youtube.com" target="_blank" aria-label="YouTube">
           <Youtube className="w-5 h-5 hover:text-white transition-colors" />
-        </a>
+        </a> */}
       </div>
       
       {/* Bottom Note */}
