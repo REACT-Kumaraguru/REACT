@@ -411,7 +411,7 @@ const payload = {
                   <textarea rows={3} className="w-full mt-2 text-sm" placeholder="Describe the problem" value={state.problemStatement} onChange={(e) => setField("problemStatement", e.target.value)} required />
                 </label>
                 <label className="field-box block w-full">
-                  <div className="text-sm">9. Impact <span className="required-marker">*</span></div>
+                  <div className="text-sm">9. Impact (Expected meaningful outcome)<span className="required-marker">*</span></div>
                   <input type="text" className="w-full mt-2 text-sm" placeholder="Impact statement" value={state.impact} onChange={(e) => setField("impact", e.target.value)} required />
                 </label>
                 <label className="field-box block w-full">
@@ -443,7 +443,7 @@ const payload = {
                   </label>
                 </div>
                 <label className="field-box block w-full">
-                  <div className="text-sm">14. Current Solution (If Already Being Worked On)</div>
+                  <div className="text-sm">14. Current Solution (List any current solutions in the market and their key limitations)</div>
                   <textarea rows={2} className="w-full mt-2 text-sm" placeholder="Notes" value={state.currentSolution} onChange={(e) => setField("currentSolution", e.target.value)} />
                 </label>
               </div>
@@ -531,8 +531,6 @@ const payload = {
             {submitMessage}
           </div>
         )}
-        
-        <div className="mt-4 text-xs text-gray-400">Data will be submitted to Supabase database.</div>
       </div>
     </div>
   );
